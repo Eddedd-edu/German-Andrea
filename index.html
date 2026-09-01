@@ -8,18 +8,17 @@
         /* ===== IMPORTACIÓN DE FUENTES ===== */
         @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap');
 
-        /* ===== VARIABLES DE COLOR ===== */
+        /* ===== VARIABLES DE COLOR (verde y café) ===== */
         :root {
-            --primary-color: #4a3f35;
-            --secondary-color: #8b7d6b;
-            --accent-color: #c9a96e;
-            --accent-light: #e8d5b5;
-            --accent-pale: #f7f0e6;
-            --rose-color: #d4a0a0;
-            --rose-pale: #f9ecec;
-            --bg-color: #fdfbf7;
+            --primary-color: #3e2f23;          /* marrón oscuro */
+            --secondary-color: #6b5b4a;        /* café medio */
+            --accent-color: #5a7d4a;           /* verde hoja */
+            --accent-light: #a8c3a0;           /* verde claro */
+            --accent-pale: #f0f5ec;            /* crema verdoso */
+            --brown-accent: #8b6b4a;           /* café */
             --card-bg: #ffffff;
-            --gold-gradient: linear-gradient(135deg, #c9a96e, #e8d5b5, #c9a96e);
+            --green-gradient: linear-gradient(135deg, #5a7d4a, #a8c3a0, #5a7d4a);
+            --brown-gradient: linear-gradient(135deg, #8b6b4a, #c4a484, #8b6b4a);
             --shadow-soft: 0 8px 40px rgba(74, 63, 53, 0.08);
             --shadow-hover: 0 15px 50px rgba(74, 63, 53, 0.15);
             --border-radius: 6px;
@@ -35,7 +34,7 @@
 
         body {
             font-family: 'Cormorant Garamond', serif;
-            background-color: var(--bg-color);
+            background-color: #fdfbf7;
             color: var(--primary-color);
             text-align: center;
             animation: pageFadeIn 1.8s ease-in-out;
@@ -44,14 +43,8 @@
         }
 
         @keyframes pageFadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(15px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* ===== HERO ===== */
@@ -71,6 +64,7 @@
             overflow: hidden;
         }
 
+        /* Overlay mucho más suave para que la foto se vea claramente */
         .hero::before {
             content: '';
             position: absolute;
@@ -80,9 +74,10 @@
             bottom: 0;
             background: linear-gradient(
                 to bottom,
-                rgba(30, 20, 15, 0.25) 0%,
-                rgba(30, 20, 15, 0.45) 50%,
-                rgba(30, 20, 15, 0.7) 100%
+                rgba(255, 255, 255, 0.1) 0%,
+                rgba(255, 255, 255, 0.05) 40%,
+                rgba(0, 0, 0, 0.25) 85%,
+                rgba(0, 0, 0, 0.45) 100%
             );
             z-index: 1;
         }
@@ -96,70 +91,43 @@
             bottom: 0;
             background: radial-gradient(
                 ellipse at center,
-                rgba(255, 255, 255, 0.08) 0%,
-                rgba(255, 255, 255, 0) 65%
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0) 60%
             );
             z-index: 1;
         }
 
-        /* Decoración floral en esquinas del hero */
+        /* Decoración floral en esquinas */
         .hero-corner {
             position: absolute;
             z-index: 2;
             font-size: 2.5rem;
-            color: rgba(255, 255, 255, 0.6);
-            opacity: 0.8;
+            color: rgba(255, 255, 255, 0.8);
+            opacity: 0.9;
             animation: floatCorner 6s ease-in-out infinite;
         }
 
-        .hero-corner.top-left {
-            top: 30px;
-            left: 40px;
-            animation-delay: 0s;
-        }
-
-        .hero-corner.top-right {
-            top: 30px;
-            right: 40px;
-            animation-delay: 1.5s;
-        }
-
-        .hero-corner.bottom-left {
-            bottom: 30px;
-            left: 40px;
-            animation-delay: 3s;
-        }
-
-        .hero-corner.bottom-right {
-            bottom: 30px;
-            right: 40px;
-            animation-delay: 4.5s;
-        }
+        .hero-corner.top-left { top: 30px; left: 40px; animation-delay: 0s; }
+        .hero-corner.top-right { top: 30px; right: 40px; animation-delay: 1.5s; }
+        .hero-corner.bottom-left { bottom: 30px; left: 40px; animation-delay: 3s; }
+        .hero-corner.bottom-right { bottom: 30px; right: 40px; animation-delay: 4.5s; }
 
         @keyframes floatCorner {
-            0%,
-            100% {
-                transform: translateY(0) rotate(0deg);
-                opacity: 0.6;
-            }
-            50% {
-                transform: translateY(-8px) rotate(3deg);
-                opacity: 0.9;
-            }
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.7; }
+            50% { transform: translateY(-8px) rotate(3deg); opacity: 1; }
         }
 
         .hero-content {
             z-index: 2;
             padding: 50px 70px;
-            border: 1.5px solid rgba(255, 255, 255, 0.55);
+            border: 1.5px solid rgba(255, 255, 255, 0.6);
             border-radius: 4px;
-            backdrop-filter: blur(6px);
-            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.1);
             position: relative;
             animation: contentReveal 2s ease-out 0.3s both;
         }
 
-        /* Esquinas decorativas del marco del hero */
         .hero-content::before {
             content: '❦';
             position: absolute;
@@ -167,8 +135,7 @@
             left: 50%;
             transform: translateX(-50%);
             font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            background: transparent;
+            color: rgba(255, 255, 255, 0.95);
             line-height: 1;
         }
 
@@ -179,20 +146,13 @@
             left: 50%;
             transform: translateX(-50%) rotate(180deg);
             font-size: 1.8rem;
-            color: rgba(255, 255, 255, 0.9);
-            background: transparent;
+            color: rgba(255, 255, 255, 0.95);
             line-height: 1;
         }
 
         @keyframes contentReveal {
-            from {
-                opacity: 0;
-                transform: scale(0.95);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            from { opacity: 0; transform: scale(0.95); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         h1 {
@@ -200,14 +160,13 @@
             font-size: 6.2em;
             margin: 0;
             font-weight: 400;
-            text-shadow: 2px 3px 12px rgba(0, 0, 0, 0.45);
+            text-shadow: 2px 3px 15px rgba(0, 0, 0, 0.7);
             line-height: 1.15;
             letter-spacing: 2px;
             color: #ffffff;
             position: relative;
         }
 
-        /* Líneas decorativas alrededor de los nombres */
         .names-divider {
             display: flex;
             align-items: center;
@@ -219,7 +178,7 @@
         .names-divider .line {
             width: 80px;
             height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
         }
 
         .names-divider .heart-icon {
@@ -229,13 +188,8 @@
         }
 
         @keyframes heartPulse {
-            0%,
-            100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.2);
-            }
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
         }
 
         .date {
@@ -246,7 +200,7 @@
             text-transform: uppercase;
             font-weight: 300;
             color: rgba(255, 255, 255, 0.95);
-            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
         }
 
         /* ===== CONTENEDOR PRINCIPAL ===== */
@@ -268,7 +222,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            border: 1px solid rgba(201, 169, 110, 0.3);
+            border: 1px solid rgba(90, 125, 74, 0.35);
             border-top: 3px solid var(--accent-color);
             position: relative;
             transition: var(--transition-smooth);
@@ -287,7 +241,7 @@
             transform: translateX(-50%);
             font-size: 1.4rem;
             color: var(--accent-color);
-            background: var(--bg-color);
+            background: #fdfbf7;
             padding: 0 12px;
             line-height: 1;
         }
@@ -323,7 +277,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--shadow-soft);
             position: relative;
-            border: 1px solid rgba(201, 169, 110, 0.25);
+            border: 1px solid rgba(90, 125, 74, 0.25);
             transition: var(--transition-smooth);
             overflow: hidden;
         }
@@ -331,10 +285,9 @@
         .section:hover {
             box-shadow: var(--shadow-hover);
             transform: translateY(-4px);
-            border-color: rgba(201, 169, 110, 0.5);
+            border-color: rgba(90, 125, 74, 0.5);
         }
 
-        /* Borde decorativo superior e inferior en cada sección */
         .section::before {
             content: '';
             position: absolute;
@@ -342,7 +295,7 @@
             left: 20%;
             right: 20%;
             height: 2px;
-            background: var(--gold-gradient);
+            background: var(--green-gradient);
             border-radius: 50%;
         }
 
@@ -353,15 +306,14 @@
             left: 20%;
             right: 20%;
             height: 2px;
-            background: var(--gold-gradient);
+            background: var(--green-gradient);
             border-radius: 50%;
         }
 
-        /* Fondo decorativo sutil */
         .section .watermark {
             position: absolute;
             font-size: 8rem;
-            color: rgba(201, 169, 110, 0.05);
+            color: rgba(90, 125, 74, 0.06);
             pointer-events: none;
             right: -20px;
             bottom: -20px;
@@ -380,15 +332,8 @@
         }
 
         @keyframes ornamentGlow {
-            0%,
-            100% {
-                opacity: 0.7;
-                text-shadow: 0 0 0 rgba(201, 169, 110, 0);
-            }
-            50% {
-                opacity: 1;
-                text-shadow: 0 0 20px rgba(201, 169, 110, 0.5);
-            }
+            0%, 100% { opacity: 0.7; text-shadow: 0 0 0 rgba(90, 125, 74, 0); }
+            50% { opacity: 1; text-shadow: 0 0 20px rgba(90, 125, 74, 0.5); }
         }
 
         .section h2 {
@@ -430,7 +375,7 @@
             font-size: 0.8em;
             font-weight: 500;
             letter-spacing: 2px;
-            color: var(--secondary-color);
+            color: var(--brown-accent);
             display: block;
             margin-top: 18px;
             text-transform: uppercase;
@@ -439,7 +384,7 @@
         .divider {
             width: 60px;
             height: 1px;
-            background: var(--gold-gradient);
+            background: var(--green-gradient);
             margin: 22px auto;
             position: relative;
         }
@@ -460,7 +405,7 @@
         .btn {
             display: inline-block;
             font-family: 'Montserrat', sans-serif;
-            background: var(--gold-gradient);
+            background: var(--green-gradient);
             color: #ffffff;
             padding: 16px 45px;
             text-decoration: none;
@@ -474,7 +419,7 @@
             position: relative;
             overflow: hidden;
             font-weight: 500;
-            box-shadow: 0 4px 15px rgba(201, 169, 110, 0.35);
+            box-shadow: 0 4px 15px rgba(90, 125, 74, 0.35);
         }
 
         .btn::before {
@@ -495,7 +440,7 @@
         .btn:hover {
             background: transparent;
             color: var(--accent-color);
-            box-shadow: 0 8px 25px rgba(201, 169, 110, 0.2);
+            box-shadow: 0 8px 25px rgba(90, 125, 74, 0.2);
             transform: translateY(-2px);
             border-color: var(--accent-color);
         }
@@ -542,7 +487,7 @@
 
         .color-item:hover .color-circle {
             border-color: var(--accent-color);
-            box-shadow: 0 6px 18px rgba(201, 169, 110, 0.3);
+            box-shadow: 0 6px 18px rgba(90, 125, 74, 0.3);
         }
 
         .color-circle::after {
@@ -597,25 +542,13 @@
 
             .hero-corner {
                 font-size: 1.6rem;
-                opacity: 0.5;
+                opacity: 0.6;
             }
 
-            .hero-corner.top-left {
-                top: 15px;
-                left: 20px;
-            }
-            .hero-corner.top-right {
-                top: 15px;
-                right: 20px;
-            }
-            .hero-corner.bottom-left {
-                bottom: 15px;
-                left: 20px;
-            }
-            .hero-corner.bottom-right {
-                bottom: 15px;
-                right: 20px;
-            }
+            .hero-corner.top-left { top: 15px; left: 20px; }
+            .hero-corner.top-right { top: 15px; right: 20px; }
+            .hero-corner.bottom-left { bottom: 15px; left: 20px; }
+            .hero-corner.bottom-right { bottom: 15px; right: 20px; }
 
             .container {
                 margin-top: -40px;
@@ -652,75 +585,40 @@
         }
 
         @media (max-width: 400px) {
-            h1 {
-                font-size: 3.5em;
-            }
-
-            .hero-content {
-                padding: 25px 15px;
-            }
-
-            .date {
-                font-size: 0.9em;
-                letter-spacing: 3px;
-            }
-
-            .section {
-                padding: 35px 15px 30px;
-            }
-
-            .section h2 {
-                font-size: 1em;
-                letter-spacing: 2px;
-            }
+            h1 { font-size: 3.5em; }
+            .hero-content { padding: 25px 15px; }
+            .date { font-size: 0.9em; letter-spacing: 3px; }
+            .section { padding: 35px 15px 30px; }
+            .section h2 { font-size: 1em; letter-spacing: 2px; }
         }
 
-        /* ===== ANIMACIÓN PARA SECCIONES AL HACER SCROLL ===== */
+        /* ===== ANIMACIÓN PARA SECCIONES ===== */
         @keyframes sectionIn {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .section {
             animation: sectionIn 0.8s ease-out both;
         }
 
-        .section:nth-child(1) {
-            animation-delay: 0.2s;
-        }
-        .section:nth-child(2) {
-            animation-delay: 0.35s;
-        }
-        .section:nth-child(3) {
-            animation-delay: 0.5s;
-        }
-        .section:nth-child(4) {
-            animation-delay: 0.65s;
-        }
-        .section:nth-child(5) {
-            animation-delay: 0.8s;
-        }
+        .section:nth-child(1) { animation-delay: 0.2s; }
+        .section:nth-child(2) { animation-delay: 0.35s; }
+        .section:nth-child(3) { animation-delay: 0.5s; }
+        .section:nth-child(4) { animation-delay: 0.65s; }
+        .section:nth-child(5) { animation-delay: 0.8s; }
 
-        /* ===== BARRA DE DESPLAZAMIENTO PERSONALIZADA ===== */
+        /* ===== BARRA DE DESPLAZAMIENTO ===== */
         ::-webkit-scrollbar {
             width: 8px;
         }
-
         ::-webkit-scrollbar-track {
-            background: var(--bg-color);
+            background: #fdfbf7;
         }
-
         ::-webkit-scrollbar-thumb {
             background: var(--accent-light);
             border-radius: 10px;
         }
-
         ::-webkit-scrollbar-thumb:hover {
             background: var(--accent-color);
         }
@@ -730,7 +628,6 @@
 
     <!-- ===== HERO ===== -->
     <div class="hero">
-        <!-- Decoraciones florales en las esquinas -->
         <span class="hero-corner top-left">❀</span>
         <span class="hero-corner top-right">❀</span>
         <span class="hero-corner bottom-left">❀</span>
@@ -749,8 +646,6 @@
 
     <!-- ===== CONTENIDO ===== -->
     <div class="container">
-
-        <!-- Canción -->
         <div class="audio-container">
             <p>Nuestra Canción</p>
             <audio controls>
@@ -759,7 +654,6 @@
             </audio>
         </div>
 
-        <!-- Ceremonia -->
         <div class="section">
             <span class="watermark">G&A</span>
             <span class="ornament">✧ ✧ ✧</span>
@@ -772,7 +666,6 @@
             </div>
         </div>
 
-        <!-- Recepción -->
         <div class="section">
             <span class="watermark">G&A</span>
             <span class="ornament">✧ ✧ ✧</span>
@@ -785,7 +678,6 @@
             </div>
         </div>
 
-        <!-- Código de Vestimenta -->
         <div class="section">
             <span class="watermark">G&A</span>
             <span class="ornament">✧ ✧ ✧</span>
@@ -793,10 +685,8 @@
             <div class="details">
                 <p><strong>Mujeres:</strong> Vestido largo</p>
                 <p><strong>Hombres:</strong> Traje formal</p>
-
                 <span class="strong-text" style="margin-top: 30px;">Tonos reservados</span>
                 <p class="color-note">Agradecemos abstenerse de usar los siguientes colores:</p>
-
                 <div class="dress-code-icons">
                     <div class="color-item">
                         <div class="color-circle bg-green"></div>
@@ -814,7 +704,6 @@
             </div>
         </div>
 
-        <!-- Mesa de Regalos -->
         <div class="section">
             <span class="watermark">G&A</span>
             <span class="ornament">✧ ✧ ✧</span>
@@ -826,7 +715,6 @@
             </div>
         </div>
 
-        <!-- Asistencia -->
         <div class="section">
             <span class="watermark">G&A</span>
             <span class="ornament">✧ ✧ ✧</span>
@@ -836,7 +724,6 @@
                 <a href="https://wa.me/573208640848?text=Hola,%20confirmo%20con%20mucha%20alegría%20mi%20asistencia%20a%20la%20boda%20de%20Germán%20y%20Andrea" target="_blank" class="btn">Confirmar Asistencia</a>
             </div>
         </div>
-
     </div>
 
 </body>
