@@ -68,62 +68,191 @@
         }
 
 
-        /* =====================================================
-           HERO
-        ===================================================== */
+      /* =====================================================
+   HERO — FOTOGRAFÍA PROTAGONISTA
+===================================================== */
 
-        .hero {
-            min-height: 92vh;
-            position: relative;
+.hero {
+    min-height: 78vh;
+    height: 680px;
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+    position: relative;
 
-            text-align: center;
-            color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-            background-image:
-                linear-gradient(
-                    rgba(48,39,31,.20),
-                    rgba(48,39,31,.45)
-                ),
-                url('imagen.jpeg');
+    text-align: center;
+    color: white;
 
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+    background-image: url('imagen.jpeg');
 
-            overflow: hidden;
-        }
+    background-size: cover;
 
-        .hero::before {
-            content: "";
-            position: absolute;
-            inset: 0;
+    /*
+       IMPORTANTE:
+       center center permite que la pareja quede
+       correctamente visible.
+    */
+    background-position: center center;
 
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(255,255,255,.13),
-                    transparent 45%
-                );
-        }
+    background-attachment: fixed;
 
-        .hero::after {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 0;
+    overflow: hidden;
+}
 
-            width: 100%;
-            height: 100px;
+/*
+   Capa muy ligera.
+   La fotografía conserva mucha más luminosidad.
+*/
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
 
-            background: linear-gradient(
-                transparent,
-                var(--marfil)
-            );
-        }
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(35,42,32,.04) 0%,
+            rgba(35,42,32,.03) 45%,
+            rgba(35,42,32,.20) 100%
+        );
+
+    z-index: 1;
+}
+
+/*
+   Degradado inferior para integrar el hero
+   con el resto de la página.
+*/
+.hero::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    height: 90px;
+
+    background:
+        linear-gradient(
+            transparent,
+            var(--marfil)
+        );
+
+    z-index: 2;
+}
+
+
+/* =====================================================
+   CONTENIDO DEL ENCABEZADO
+===================================================== */
+
+.hero-content {
+
+    position: relative;
+
+    z-index: 4;
+
+    width: min(92%, 850px);
+
+    padding: 35px 40px;
+
+    /*
+       Fondo mucho más transparente para
+       no tapar la fotografía.
+    */
+    background: rgba(40,35,28,.10);
+
+    border: 1px solid rgba(255,255,255,.55);
+
+    backdrop-filter: blur(2px);
+
+    box-shadow:
+        0 10px 40px rgba(0,0,0,.10);
+
+    animation: aparecer 1.4s ease both;
+}
+
+
+.pre-title {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: .68rem;
+
+    letter-spacing: 6px;
+
+    text-transform: uppercase;
+
+    font-weight: 400;
+
+    margin-bottom: 12px;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.55);
+}
+
+
+h1 {
+
+    font-family: 'Great Vibes', cursive;
+
+    font-size: clamp(4rem, 9vw, 7rem);
+
+    font-weight: 400;
+
+    line-height: 1;
+
+    color: #fff;
+
+    text-shadow:
+        0 3px 12px rgba(0,0,0,.65),
+        0 1px 3px rgba(0,0,0,.8);
+}
+
+
+.hero-line {
+
+    width: 90px;
+
+    height: 1px;
+
+    margin: 20px auto;
+
+    background:
+        rgba(255,255,255,.85);
+}
+
+
+.hero-date {
+
+    font-family: 'Montserrat', sans-serif;
+
+    font-size: .82rem;
+
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.6);
+}
+
+
+.hero-location {
+
+    margin-top: 8px;
+
+    font-size: 1.05rem;
+
+    font-style: italic;
+
+    text-shadow:
+        0 2px 8px rgba(0,0,0,.6);
+}
 
 
         /* =====================================================
@@ -253,102 +382,162 @@
         }
 
 
-        /* =====================================================
-           CONTADOR
-        ===================================================== */
+      /* =====================================================
+   CONTADOR — FORMATO HORIZONTAL
+===================================================== */
 
-        .countdown-wrapper {
-            position: relative;
-            z-index: 5;
+.countdown-wrapper {
 
-            max-width: 780px;
+    position: relative;
 
-            margin: -65px auto 55px;
+    z-index: 5;
 
-            padding: 28px 25px 32px;
+    width: min(92%, 760px);
 
-            background: rgba(255,255,255,.96);
+    margin: -38px auto 45px;
 
-            border: 1px solid rgba(104,118,91,.28);
+    padding: 18px 25px 20px;
 
-            box-shadow: var(--sombra);
+    background:
+        rgba(255,255,255,.97);
 
-            text-align: center;
-        }
+    border: 1px solid
+        rgba(104,118,91,.25);
 
-        .countdown-title {
-            font-family: 'Montserrat', sans-serif;
-            color: var(--verde-bosque);
+    box-shadow:
+        0 12px 35px
+        rgba(63,81,64,.10);
 
-            font-size: .68rem;
-            letter-spacing: 4px;
-            text-transform: uppercase;
+    text-align: center;
+}
 
-            margin-bottom: 22px;
-        }
 
-        .countdown {
-            display: grid;
+/* Título mucho más pequeño */
 
-            grid-template-columns:
-                repeat(4, 1fr);
+.countdown-title {
 
-            gap: 15px;
-        }
+    font-family: 'Montserrat', sans-serif;
 
-        .time-box {
-            position: relative;
+    color: var(--verde-bosque);
 
-            padding: 12px 5px;
+    font-size: .55rem;
 
-            border-right:
-                1px solid rgba(104,118,91,.18);
-        }
+    letter-spacing: 3px;
 
-        .time-box:last-child {
-            border-right: none;
-        }
+    text-transform: uppercase;
 
-        .time-number {
-            display: block;
+    margin-bottom: 12px;
+}
 
-            font-family: 'Cormorant Garamond', serif;
 
-            font-size: clamp(2.2rem, 6vw, 3.5rem);
+/*
+   LOS CUATRO ELEMENTOS EN UNA SOLA FILA
+*/
 
-            color: var(--cafe-oscuro);
+.countdown {
 
-            font-weight: 500;
+    display: flex;
 
-            line-height: 1;
-        }
+    align-items: center;
 
-        .time-label {
-            display: block;
+    justify-content: center;
 
-            margin-top: 8px;
+    width: 100%;
 
-            font-family: 'Montserrat', sans-serif;
+    gap: 0;
+}
 
-            font-size: .58rem;
 
-            letter-spacing: 2px;
+/* Cada unidad */
 
-            text-transform: uppercase;
+.time-box {
 
-            color: var(--verde-oliva);
-        }
+    flex: 1;
 
-        #countdown-message {
-            display: none;
+    position: relative;
 
-            font-family: 'Great Vibes', cursive;
+    padding: 3px 12px;
 
-            font-size: 2.4rem;
+    display: flex;
 
-            color: var(--verde-bosque);
-        }
+    align-items: baseline;
 
+    justify-content: center;
+
+    gap: 6px;
+
+    border-right:
+        1px solid
+        rgba(104,118,91,.20);
+}
+
+
+.time-box:last-child {
+
+    border-right: none;
+}
+
+
+/* Número */
+
+.time-number {
+
+    display: inline-block;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    font-size:
+        clamp(1.7rem, 4vw, 2.5rem);
+
+    line-height: 1;
+
+    color:
+        var(--cafe-oscuro);
+
+    font-weight: 500;
+}
+
+
+/* Texto */
+
+.time-label {
+
+    display: inline-block;
+
+    font-family:
+        'Montserrat',
+        sans-serif;
+
+    font-size: .52rem;
+
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    color:
+        var(--verde-oliva);
+
+    font-weight: 500;
+}
+
+
+/* Mensaje del día */
+
+#countdown-message {
+
+    display: none;
+
+    font-family:
+        'Great Vibes',
+        cursive;
+
+    font-size: 2rem;
+
+    color:
+        var(--verde-bosque);
+}
 
         /* =====================================================
            CONTENEDOR
@@ -817,88 +1006,125 @@
         /* =====================================================
            RESPONSIVE
         ===================================================== */
+@media(max-width:700px) {
 
-        @media(max-width:700px) {
+    /* ================================================
+       HERO MÓVIL
+    ================================================ */
 
-            .hero {
-                min-height: 82vh;
-                background-attachment: scroll;
-            }
+    .hero {
 
-            .hero-content {
-                padding: 50px 20px;
-            }
+        min-height: 70vh;
 
-            .pre-title {
-                letter-spacing: 3px;
-            }
+        height: 560px;
 
-            .hero-date {
-                letter-spacing: 3px;
-            }
+        background-attachment: scroll;
 
-            .countdown-wrapper {
-                width: 92%;
-                margin-top: -45px;
-            }
+        /*
+           En móviles mantenemos la fotografía
+           centrada.
+        */
+        background-position: center center;
+    }
 
-            .countdown {
-                gap: 3px;
-            }
 
-            .time-box {
-                padding: 8px 3px;
-            }
+    .hero-content {
 
-            .time-number {
-                font-size: 2rem;
-            }
+        width: 92%;
 
-            .time-label {
-                font-size: .48rem;
-                letter-spacing: 1px;
-            }
+        padding: 32px 15px;
 
-            .section {
-                padding: 45px 23px;
-            }
+        background:
+            rgba(40,35,28,.08);
+    }
 
-            .details {
-                font-size: 1.2rem;
-            }
 
-            .place {
-                font-size: 1.35rem;
-            }
+    .pre-title {
 
-            .dress-row {
-                grid-template-columns: 1fr;
-            }
+        font-size: .58rem;
 
-            .colors {
-                gap: 18px;
-            }
+        letter-spacing: 3px;
 
-            .leaf {
-                font-size: 24px;
-            }
+        margin-bottom: 10px;
+    }
 
-            .leaf-1 {
-                left: 20px;
-            }
 
-            .leaf-2 {
-                right: 20px;
-            }
+    h1 {
 
-            .leaf-3 {
-                left: 25px;
-            }
+        font-size:
+            clamp(3.5rem, 16vw, 5rem);
+    }
 
-            .leaf-4 {
-                right: 25px;
-            }
-        }
+
+    .hero-date {
+
+        font-size: .62rem;
+
+        letter-spacing: 3px;
+    }
+
+
+    .hero-location {
+
+        font-size: .95rem;
+    }
+
+
+    /* ================================================
+       CONTADOR MÓVIL
+    ================================================ */
+
+    .countdown-wrapper {
+
+        width: 94%;
+
+        margin-top: -30px;
+
+        padding:
+            14px 8px 16px;
+    }
+
+
+    .countdown-title {
+
+        font-size: .48rem;
+
+        letter-spacing: 2px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .time-box {
+
+        padding:
+            2px 4px;
+
+        gap: 3px;
+    }
+
+
+    .time-number {
+
+        font-size:
+            clamp(1.35rem, 7vw, 2rem);
+    }
+
+
+    .time-label {
+
+        font-size: .42rem;
+
+        letter-spacing: .7px;
+    }
+
+
+    .section {
+
+        padding:
+            40px 20px;
+    }
+}
 
         @media(max-width:400px) {
 
@@ -918,7 +1144,35 @@
                 font-size: 1.35rem;
             }
         }
+@media(max-width:380px) {
 
+    .hero {
+        height: 520px;
+    }
+
+    h1 {
+        font-size: 3.2rem;
+    }
+
+    .countdown-wrapper {
+        padding-left: 4px;
+        padding-right: 4px;
+    }
+
+    .time-box {
+        padding-left: 2px;
+        padding-right: 2px;
+    }
+
+    .time-number {
+        font-size: 1.35rem;
+    }
+
+    .time-label {
+        font-size: .38rem;
+        letter-spacing: .4px;
+    }
+}
 
         /* =====================================================
            ACCESIBILIDAD
