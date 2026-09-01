@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Germán & Andrea</title>
+    <style>
+        /* Importando fuentes elegantes de Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400&display=swap');
+        
+        :root {
+            --primary-color: #333333;
+            --accent-color: #C5A880; /* Tono dorado/champaña */
+            --bg-color: #FAF9F7;
+            --card-bg: #FFFFFF;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background-color: var(--bg-color);
+            color: var(--primary-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero {
+            background-image: url('imagen.jpeg');
+            background-size: cover;
+            background-position: center;
+            height: 75vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            position: relative;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6));
+            z-index: 1;
+        }
+
+        .hero-content {
+            z-index: 2;
+            padding: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            padding: 40px 60px;
+            backdrop-filter: blur(2px);
+        }
+
+        h1 {
+            font-family: 'Alex Brush', cursive;
+            font-size: 5.5em;
+            margin: 0;
+            font-weight: normal;
+            text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            line-height: 1.2;
+        }
+
+        .date {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1.1em;
+            margin-top: 15px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            font-weight: 300;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: -50px auto 0;
+            padding: 0 20px 40px;
+            position: relative;
+            z-index: 3;
+        }
+
+        .audio-container {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-top: 3px solid var(--accent-color);
+        }
+
+        .audio-container p {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 15px;
+            margin-top: 0;
+        }
+
+        audio {
+            width: 100%;
+            max-width: 350px;
+            height: 35px;
+            outline: none;
+        }
+
+        .section {
+            margin-bottom: 30px;
+            padding: 45px 35px;
+            background: var(--card-bg);
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+            position: relative;
+        }
+
+        .ornament {
+            color: var(--accent-color);
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--accent-color);
+            font-size: 1.2em;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+            margin-top: 0;
+            font-weight: 400;
+        }
+
+        .details {
+            font-size: 1.3em;
+            line-height: 1.6;
+        }
+
+        .details p {
+            margin: 8px 0;
+        }
+
+        .strong-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85em;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #555;
+            display: block;
+            margin-top: 15px;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 50px;
+            height: 1px;
+            background-color: var(--accent-color);
+            margin: 20px auto;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--accent-color);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 2px;
+            font-size: 0.9em;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 30px;
+            transition: all 0.4s ease;
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--accent-color);
+        }
+
+        .dress-code-icons {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 25px;
+        }
+
+        .color-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #888;
+        }
+
+        .color-circle {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            position: relative;
+        }
+
+        .color-circle::after {
+            content: '';
+            position: absolute;
+            width: 1px;
+            height: 100%;
+            background-color: #333;
+            transform: rotate(45deg);
+        }
+
+        .bg-green { background-color: #4a6741; }
+        .bg-black { background-color: #1a1a1a; }
+        .bg-white { background-color: #f9f9f9; }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 4em; }
+            .hero-content { padding: 30px 20px; border: none; }
+            .section { padding: 40px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="hero">
+        <div class="hero-content">
+            <!-- Nombres de los novios actualizados -->
+            <h1>Germán & Andrea</h1>
+            <div class="date">5 de Diciembre</div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="audio-container">
+            <p>Nuestra Canción</p>
+            <audio controls>
+                <source src="Prometo.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
+        </div>
+
+        <div class="section">
+            <div class="ornament">✧</div>
+            <h2>Ceremonia</h2>
+            <div class="details">
+                <span class="strong-text">4:00 PM</span>
+                <p>Parroquia Santa Cruz de Jerusalén</p>
+                <div class="divider"></div>
+                <p>Ibagué, Tolima<br>Mirador turístico Bellavista</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="ornament">✧</div>
+            <h2>Recepción</h2>
+            <div class="details">
+                <span class="strong-text">7:00 PM</span>
+                <p>Hacienda Santa Cruz</p>
+                <div class="divider"></div>
+                <p>Av. Santa Cruz, Calle 99, Cra 13 sur</p>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="ornament">✧</div>
+            <h2>Código de Vestimenta</h2>
+            <div class="details">
+                <p><strong>Mujeres:</strong> Vestido largo</p>
+                <p><strong>Hombres:</strong> Traje formal</p>
+                
+                <span class="strong-text" style="margin-top: 30px;">Tonos reservados</span>
+                <p style="font-size: 0.85em; font-style: italic; color: #777;">Agradecemos abstenerse de usar los siguientes colores:</p>
+                
+                <div class="dress-code-icons">
+                    <div class="color-item">
+                        <div class="color-circle bg-green"></div>
+                        <span>Verde</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circle bg-black"></div>
+                        <span>Negro</span>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circle bg-white"></div>
+                        <span>Blanco</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="ornament">✧</div>
+            <h2>Mesa de Regalos</h2>
+            <div class="details">
+                <p>Nuestro mejor regalo es contar con tu presencia.</p>
+                <p>Si deseas tener un detalle con nosotros,<br>sugerimos la modalidad de</p>
+                <span class="strong-text">Lluvia de Sobres</span>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="ornament">✧</div>
+            <h2>Asistencia</h2>
+            <div class="details">
+                <p>Nos haría muy felices compartir este día contigo.<br>Por favor, confírmanos tu compañía.</p>
+                <a href="https://wa.me/573208640848?text=Hola,%20confirmo%20con%20mucha%20alegría%20mi%20asistencia%20a%20la%20boda%20de%20Germán%20y%20Andrea" target="_blank" class="btn">Confirmar Asistencia</a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
