@@ -84,12 +84,13 @@ body {
     min-height: 560px;
 
     display: flex;
-    align-items: center;
+    align-items: flex-end; /* <-- TEXTO MOVIDO HACIA ABAJO */
     justify-content: center;
+    padding-bottom: 120px; /* <-- ESPACIO INFERIOR PARA QUE NO CHOQUE CON EL CONTADOR */
 
     text-align: center;
 
-    background-image: url('imagen.jpeg');
+    background-image: url('imagen.jpg');
 
     background-size: cover;
     background-position: center center;
@@ -1428,10 +1429,6 @@ footer {
 <body>
 
 
-<!-- =====================================================
-     ENCABEZADO
-===================================================== -->
-
 <header class="hero">
 
 
@@ -1442,7 +1439,7 @@ footer {
 
     <span class="floating-leaf leaf-2">
         ❧
-    </span>
+        </span>
 
 
     <span class="floating-leaf leaf-3">
@@ -1455,11 +1452,7 @@ footer {
     </span>
 
 
-    <!--
-         TEXTO DIRECTAMENTE SOBRE LA FOTOGRAFÍA
-    -->
-
-    <div class="hero-content">
+        <div class="hero-content">
 
 
         <div class="pre-title">
@@ -1491,10 +1484,6 @@ footer {
 </header>
 
 
-
-<!-- =====================================================
-     CONTADOR
-===================================================== -->
 
 <section class="countdown-wrapper">
 
@@ -1590,18 +1579,10 @@ footer {
 
 
 
-<!-- =====================================================
-     CONTENIDO
-===================================================== -->
-
 <main class="container">
 
 
-    <!-- =================================================
-         NUESTRA CANCIÓN
-    ================================================== -->
-
-    <section class="audio-container">
+        <section class="audio-container">
 
 
         <div class="audio-label">
@@ -1631,11 +1612,7 @@ footer {
 
 
 
-    <!-- =================================================
-         CEREMONIA
-    ================================================== -->
-
-    <section class="section">
+        <section class="section">
 
 
         <span class="ornament">
@@ -1681,11 +1658,7 @@ footer {
 
 
 
-    <!-- =================================================
-         RECEPCIÓN
-    ================================================== -->
-
-    <section class="section">
+        <section class="section">
 
 
         <span class="ornament">
@@ -1730,11 +1703,7 @@ footer {
 
 
 
-    <!-- =================================================
-         VESTIMENTA
-    ================================================== -->
-
-    <section class="section">
+        <section class="section">
 
 
         <span class="ornament">
@@ -1831,11 +1800,7 @@ footer {
 
 
 
-    <!-- =================================================
-         MESA DE REGALOS
-    ================================================== -->
-
-    <section class="section gift-section">
+        <section class="section gift-section">
 
 
         <span class="ornament">
@@ -1909,11 +1874,7 @@ footer {
 
 
 
-    <!-- =================================================
-         ASISTENCIA
-    ================================================== -->
-
-    <section class="section">
+        <section class="section">
 
 
         <span class="ornament">
@@ -1971,10 +1932,6 @@ footer {
 
 
 
-<!-- =====================================================
-     PIE DE PÁGINA
-===================================================== -->
-
 <footer>
 
 
@@ -1995,10 +1952,6 @@ footer {
 </footer>
 
 
-
-<!-- =====================================================
-     CONTADOR JAVASCRIPT
-===================================================== -->
 
 <script>
 
