@@ -1,2848 +1,1432 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-
-<meta charset="UTF-8">
-
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
-
-<title>Germán & Andrea | Nuestra Boda</title>
-
-
-<!-- =====================================================
-     FUENTES
-===================================================== -->
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-
-<link
-    rel="preconnect"
-    href="https://fonts.gstatic.com"
-    crossorigin
->
-
-<link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
->
-
-
-<style>
-
-/* =====================================================
-   PALETA BOTÁNICA TROPICAL
-===================================================== */
-
-:root {
-
-    --verde-selva: #263d2d;
-
-    --verde-bosque: #38513d;
-
-    --verde-oliva: #66785b;
-
-    --verde-salvia: #a8b69d;
-
-    --verde-claro: #dfe6d8;
-
-    --cafe-oscuro: #49372b;
-
-    --cafe-madera: #735943;
-
-    --cafe-claro: #ad9070;
-
-    --arena: #e5d6c0;
-
-    --marfil: #faf7f0;
-
-    --crema: #f3ede3;
-
-    --blanco: #ffffff;
-
-    --texto: #473c33;
-
-    --texto-suave: #75695e;
-
-    --sombra:
-        0 15px 45px rgba(38,61,45,.11);
-
-    --sombra-hover:
-        0 22px 55px rgba(38,61,45,.18);
-
-}
-
-
-/* =====================================================
-   RESET
-===================================================== */
-
-* {
-
-    margin: 0;
-
-    padding: 0;
-
-    box-sizing: border-box;
-
-}
-
-
-html {
-
-    scroll-behavior: smooth;
-
-}
-
-
-body {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    color:
-        var(--texto);
-
-    line-height:
-        1.6;
-
-    overflow-x:
-        hidden;
-
-    /*
-       Fondo botánico con varias capas
-    */
-
-    background:
-
-        radial-gradient(
-            circle at 5% 10%,
-            rgba(168,182,157,.28),
-            transparent 24%
-        ),
-
-        radial-gradient(
-            circle at 95% 30%,
-            rgba(115,89,67,.12),
-            transparent 25%
-        ),
-
-        radial-gradient(
-            circle at 20% 75%,
-            rgba(168,182,157,.18),
-            transparent 25%
-        ),
-
-        var(--marfil);
-
-}
-
-
-/* =====================================================
-   TEXTURA BOTÁNICA GENERAL
-===================================================== */
-
-body::before {
-
-    content: "";
-
-    position: fixed;
-
-    inset: 0;
-
-    pointer-events: none;
-
-    z-index: -1;
-
-    opacity: .22;
-
-    background-image:
-
-        radial-gradient(
-            ellipse at 20% 20%,
-            transparent 0,
-            transparent 70%,
-            rgba(56,81,61,.08) 71%,
-            transparent 72%
-        );
-
-    background-size:
-        150px 150px;
-
-}
-
-
-/* =====================================================
-   HERO
-   FOTOGRAFÍA COMO PROTAGONISTA
-===================================================== */
-
-.hero {
-
-    position: relative;
-
-    width: 100%;
-
-    height: 88vh;
-
-    min-height: 570px;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    text-align: center;
-
-    overflow: hidden;
-
-    background-image:
-
-        url('imagen.jpg');
-
-    background-size:
-        cover;
-
-    background-position:
-        center center;
-
-    background-attachment:
-        fixed;
-
-}
-
-
-/*
-   Solamente un degradado muy suave en la parte inferior.
-   NO oscurece la fotografía.
-*/
-
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    height: 125px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--marfil)
-        );
-
-    z-index: 2;
-
-    pointer-events: none;
-
-}
-
-
-/* =====================================================
-   NOMBRES FLOTANTES
-===================================================== */
-
-.hero-content {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-
-    padding: 20px;
-
-    background: transparent;
-
-    border: none;
-
-    box-shadow: none;
-
-    animation:
-        heroAppear 1.5s ease both;
-
-}
-
-
-@keyframes heroAppear {
-
-    from {
-
-        opacity: 0;
-
-        transform:
-            translateY(25px);
-
-    }
-
-    to {
-
-        opacity: 1;
-
-        transform:
-            translateY(0);
-
-    }
-
-}
-
-
-.pre-title {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .68rem;
-
-    letter-spacing:
-        7px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        white;
-
-    margin-bottom:
-        15px;
-
-    text-shadow:
-        0 2px 12px rgba(0,0,0,.65);
-
-}
-
-
-h1 {
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:
-        clamp(
-            4.5rem,
-            11vw,
-            8rem
-        );
-
-    font-weight:
-        400;
-
-    line-height:
-        .95;
-
-    color:
-        white;
-
-    letter-spacing:
-        1px;
-
-    text-shadow:
-
-        0 3px 5px rgba(0,0,0,.65),
-
-        0 8px 25px rgba(0,0,0,.45);
-
-}
-
-
-.hero-line {
-
-    width:
-        90px;
-
-    height:
-        1px;
-
-    margin:
-        22px auto;
-
-    background:
-        rgba(255,255,255,.9);
-
-    box-shadow:
-        0 1px 8px rgba(0,0,0,.5);
-
-}
-
-
-.hero-date {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .78rem;
-
-    letter-spacing:
-        5px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        white;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.7);
-
-}
-
-
-.hero-location {
-
-    margin-top:
-        8px;
-
-    font-size:
-        1.1rem;
-
-    font-style:
-        italic;
-
-    color:
-        white;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.7);
-
-}
-
-
-/* =====================================================
-   HOJAS FLOTANTES DEL HERO
-===================================================== */
-
-.botanical {
-
-    position:
-        absolute;
-
-    z-index:
-        4;
-
-    color:
-        rgba(255,255,255,.72);
-
-    pointer-events:
-        none;
-
-    text-shadow:
-        0 2px 10px rgba(0,0,0,.35);
-
-    animation:
-        leafFloat 7s ease-in-out infinite;
-
-}
-
-
-.botanical-1 {
-
-    top:
-        12%;
-
-    left:
-        5%;
-
-    font-size:
-        42px;
-
-    transform:
-        rotate(-25deg);
-
-}
-
-
-.botanical-2 {
-
-    top:
-        20%;
-
-    right:
-        6%;
-
-    font-size:
-        32px;
-
-    animation-delay:
-        1.5s;
-
-}
-
-
-.botanical-3 {
-
-    bottom:
-        19%;
-
-    left:
-        7%;
-
-    font-size:
-        28px;
-
-    animation-delay:
-        3s;
-
-}
-
-
-.botanical-4 {
-
-    bottom:
-        16%;
-
-    right:
-        7%;
-
-    font-size:
-        40px;
-
-    animation-delay:
-        4.5s;
-
-}
-
-
-@keyframes leafFloat {
-
-    0%,
-    100% {
-
-        transform:
-            translateY(0)
-            rotate(0deg);
-
-    }
-
-    50% {
-
-        transform:
-            translateY(-12px)
-            rotate(7deg);
-
-    }
-
-}
-
-
-/* =====================================================
-   CONTADOR HORIZONTAL
-===================================================== */
-
-.countdown-wrapper {
-
-    position:
-        relative;
-
-    z-index:
-        10;
-
-    width:
-        min(92%,720px);
-
-    margin:
-        -38px auto 50px;
-
-    padding:
-        15px 20px 17px;
-
-    background:
-        rgba(255,255,255,.97);
-
-    border:
-        1px solid
-        rgba(56,81,61,.22);
-
-    box-shadow:
-        var(--sombra);
-
-}
-
-
-.countdown-wrapper::before {
-
-    content:
-        "❧";
-
-    position:
-        absolute;
-
-    left:
-        -18px;
-
-    top:
-        -18px;
-
-    color:
-        var(--verde-oliva);
-
-    font-size:
-        30px;
-
-    transform:
-        rotate(-25deg);
-
-}
-
-
-.countdown-wrapper::after {
-
-    content:
-        "❧";
-
-    position:
-        absolute;
-
-    right:
-        -18px;
-
-    bottom:
-        -18px;
-
-    color:
-        var(--cafe-madera);
-
-    font-size:
-        30px;
-
-    transform:
-        rotate(155deg);
-
-}
-
-
-.countdown-title {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--verde-bosque);
-
-    font-size:
-        .52rem;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-    text-align:
-        center;
-
-    margin-bottom:
-        10px;
-
-}
-
-
-.countdown {
-
-    display:
-        flex;
-
-    align-items:
-        center;
-
-    justify-content:
-        center;
-
-    width:
-        100%;
-
-}
-
-
-.time-box {
-
-    flex:
-        1;
-
-    display:
-        flex;
-
-    align-items:
-        baseline;
-
-    justify-content:
-        center;
-
-    gap:
-        5px;
-
-    padding:
-        2px 10px;
-
-    border-right:
-        1px solid
-        rgba(104,118,91,.20);
-
-}
-
-
-.time-box:last-child {
-
-    border-right:
-        none;
-
-}
-
-
-.time-number {
-
-    font-family:
-        'Cormorant Garamond',
-        serif;
-
-    font-size:
-        clamp(
-            1.65rem,
-            4vw,
-            2.45rem
-        );
-
-    line-height:
-        1;
-
-    font-weight:
-        500;
-
-    color:
-        var(--cafe-oscuro);
-
-}
-
-
-.time-label {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .48rem;
-
-    letter-spacing:
-        1px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--verde-oliva);
-
-}
-
-
-#countdown-message {
-
-    display:
-        none;
-
-    text-align:
-        center;
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:
-        2rem;
-
-    color:
-        var(--verde-bosque);
-
-}
-
-
-/* =====================================================
-   CONTENEDOR
-===================================================== */
-
-.container {
-
-    width:
-        min(92%,760px);
-
-    margin:
-        auto;
-
-    padding-bottom:
-        60px;
-
-}
-
-
-/* =====================================================
-   ELEMENTOS BOTÁNICOS LATERALES
-===================================================== */
-
-.container {
-
-    position:
-        relative;
-
-}
-
-
-.container::before {
-
-    content:
-        "🌿";
-
-    position:
-        fixed;
-
-    left:
-        1%;
-
-    top:
-        45%;
-
-    font-size:
-        70px;
-
-    opacity:
-        .07;
-
-    transform:
-        rotate(-25deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-.container::after {
-
-    content:
-        "🌿";
-
-    position:
-        fixed;
-
-    right:
-        1%;
-
-    top:
-        60%;
-
-    font-size:
-        70px;
-
-    opacity:
-        .07;
-
-    transform:
-        rotate(25deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-/* =====================================================
-   MÚSICA
-===================================================== */
-
-.audio-container {
-
-    position:
-        relative;
-
-    text-align:
-        center;
-
-    margin-bottom:
-        35px;
-
-    padding:
-        25px 20px;
-
-    background:
-        rgba(243,237,227,.85);
-
-    border-top:
-        1px solid
-        rgba(128,102,80,.20);
-
-    border-bottom:
-        1px solid
-        rgba(128,102,80,.20);
-
-}
-
-
-.audio-container::before {
-
-    content:
-        "❧";
-
-    display:
-        block;
-
-    color:
-        var(--verde-oliva);
-
-    font-size:
-        22px;
-
-    margin-bottom:
-        5px;
-
-}
-
-
-.audio-label {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .62rem;
-
-    letter-spacing:
-        4px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--verde-bosque);
-
-    margin-bottom:
-        14px;
-
-}
-
-
-audio {
-
-    width:
-        min(100%,380px);
-
-    height:
-        38px;
-
-}
-
-
-/* =====================================================
-   TARJETAS
-===================================================== */
-
-.section {
-
-    position:
-        relative;
-
-    margin-bottom:
-        30px;
-
-    padding:
-        55px 42px;
-
-    background:
-        rgba(255,255,255,.94);
-
-    border:
-        1px solid
-        rgba(104,118,91,.18);
-
-    box-shadow:
-        var(--sombra);
-
-    overflow:
-        hidden;
-
-    transition:
-        .45s ease;
-
-}
-
-
-/* Fondo botánico interno */
-
-.section::before {
-
-    content:
-        "";
-
-    position:
-        absolute;
-
-    top:
-        0;
-
-    left:
-        15%;
-
-    right:
-        15%;
-
-    height:
-        2px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--verde-oliva),
-            var(--cafe-madera),
-            transparent
-        );
-
-}
-
-
-/* Decoración botánica */
-
-.section::after {
-
-    content:
-        "❧";
-
-    position:
-        absolute;
-
-    right:
-        -5px;
-
-    bottom:
-        -35px;
-
-    font-size:
-        9rem;
-
-    color:
-        rgba(56,81,61,.055);
-
-    transform:
-        rotate(-18deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-.section:hover {
-
-    transform:
-        translateY(-4px);
-
-    box-shadow:
-        var(--sombra-hover);
-
-}
-
-
-/* =====================================================
-   TÍTULOS
-===================================================== */
-
-.ornament {
-
-    display:
-        block;
-
-    color:
-        var(--verde-oliva);
-
-    font-size:
-        1.35rem;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.section h2 {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--verde-bosque);
-
-    font-size:
-        .83rem;
-
-    letter-spacing:
-        4px;
-
-    text-transform:
-        uppercase;
-
-    font-weight:
-        500;
-
-    margin-bottom:
-        28px;
-
-}
-
-
-/* =====================================================
-   DETALLES
-===================================================== */
-
-.details {
-
-    font-size:
-        1.35rem;
-
-    line-height:
-        1.65;
-
-    color:
-        var(--texto);
-
-    text-align:
-        center;
-
-}
-
-
-.details p {
-
-    margin:
-        6px 0;
-
-}
-
-
-.time {
-
-    display:
-        block;
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--cafe-madera);
-
-    font-size:
-        .76rem;
-
-    letter-spacing:
-        3px;
-
-    font-weight:
-        600;
-
-    margin-bottom:
-        10px;
-
-}
-
-
-.place {
-
-    font-size:
-        1.55rem;
-
-    font-weight:
-        500;
-
-    color:
-        var(--verde-selva);
-
-}
-
-
-.address {
-
-    color:
-        var(--texto-suave);
-
-    font-size:
-        1.08rem;
-
-}
-
-
-.divider {
-
-    width:
-        65px;
-
-    height:
-        1px;
-
-    margin:
-        21px auto;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--verde-oliva),
-            transparent
-        );
-
-}
-
-
-/* =====================================================
-   VESTIMENTA
-===================================================== */
-
-.dress-row {
-
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(2,1fr);
-
-    gap:
-        15px;
-
-    margin-bottom:
-        32px;
-
-}
-
-
-.dress-card {
-
-    padding:
-        20px 15px;
-
-    background:
-        linear-gradient(
-            145deg,
-            #f5f0e7,
-            #ebe4d8
-        );
-
-    border:
-        1px solid
-        rgba(128,102,80,.15);
-
-}
-
-
-.dress-card strong {
-
-    display:
-        block;
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--verde-bosque);
-
-    font-size:
-        .68rem;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom:
-        5px;
-
-}
-
-
-.dress-card span {
-
-    font-size:
-        1.15rem;
-
-}
-
-
-.reserved-title {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--cafe-madera);
-
-    font-size:
-        .68rem;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom:
-        8px;
-
-}
-
-
-.color-note {
-
-    color:
-        var(--texto-suave);
-
-    font-size:
-        1rem;
-
-    font-style:
-        italic;
-
-}
-
-
-.colors {
-
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    gap:
-        25px;
-
-    margin-top:
-        20px;
-
-}
-
-
-.color-item {
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .62rem;
-
-    letter-spacing:
-        1px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--texto-suave);
-
-}
-
-
-.color-circle {
-
-    width:
-        46px;
-
-    height:
-        46px;
-
-    margin:
-        auto auto 8px;
-
-    border-radius:
-        50%;
-
-    border:
-        3px solid white;
-
-    outline:
-        1px solid
-        rgba(0,0,0,.08);
-
-    box-shadow:
-        0 5px 15px
-        rgba(0,0,0,.12);
-
-}
-
-
-.verde {
-
-    background:
-        #65755b;
-
-}
-
-
-.negro {
-
-    background:
-        #252522;
-
-}
-
-
-.blanco {
-
-    background:
-        #f7f5ef;
-
-}
-
-
-/* =====================================================
-   MESA DE REGALOS
-===================================================== */
-
-.gift-section {
-
-    background:
-
-        linear-gradient(
-            145deg,
-            rgba(255,255,255,.96),
-            rgba(239,235,222,.96)
-        );
-
-}
-
-
-.gift-icon {
-
-    font-size:
-        2.3rem;
-
-    color:
-        var(--cafe-madera);
-
-    margin-bottom:
-        12px;
-
-}
-
-
-.gift-main {
-
-    font-size:
-        1.55rem;
-
-    color:
-        var(--cafe-oscuro);
-
-    line-height:
-        1.5;
-
-    margin-bottom:
-        18px;
-
-}
-
-
-.gift-text {
-
-    max-width:
-        550px;
-
-    margin:
-        auto;
-
-    color:
-        var(--texto-suave);
-
-    font-size:
-        1.13rem;
-
-    line-height:
-        1.7;
-
-}
-
-
-.gift-highlight {
-
-    display:
-        inline-block;
-
-    margin-top:
-        24px;
-
-    padding:
-        11px 23px;
-
-    border-top:
-        1px solid
-        var(--cafe-claro);
-
-    border-bottom:
-        1px solid
-        var(--cafe-claro);
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    color:
-        var(--verde-bosque);
-
-    font-size:
-        .7rem;
-
-    letter-spacing:
-        3px;
-
-    text-transform:
-        uppercase;
-
-}
-
-
-/* =====================================================
-   BOTÓN
-===================================================== */
-
-.btn {
-
-    display:
-        inline-block;
-
-    margin-top:
-        28px;
-
-    padding:
-        15px 34px;
-
-    background:
-        var(--verde-bosque);
-
-    color:
-        white;
-
-    text-decoration:
-        none;
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .67rem;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
-    transition:
-        .4s ease;
-
-    box-shadow:
-        0 8px 22px
-        rgba(56,81,61,.22);
-
-}
-
-
-.btn:hover {
-
-    background:
-        var(--cafe-oscuro);
-
-    transform:
-        translateY(-3px);
-
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-
-    position:
-        relative;
-
-    padding:
-        35px 20px 55px;
-
-    text-align:
-        center;
-
-}
-
-
-footer::before {
-
-    content:
-        "❧";
-
-    display:
-        block;
-
-    color:
-        var(--verde-oliva);
-
-    font-size:
-        25px;
-
-    margin-bottom:
-        5px;
-
-}
-
-
-.footer-names {
-
-    font-family:
-        'Great Vibes',
-        cursive;
-
-    font-size:
-        2.7rem;
-
-    color:
-        var(--verde-bosque);
-
-}
-
-
-.footer-text {
-
-    margin-top:
-        6px;
-
-    font-family:
-        'Montserrat',
-        sans-serif;
-
-    font-size:
-        .58rem;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
-    color:
-        var(--texto-suave);
-
-}
-
-
-/* =====================================================
-   MÓVIL
-===================================================== */
-
-@media(max-width:700px) {
-
-
-    /* HERO */
-
-    .hero {
-
-        height:
-            72vh;
-
-        min-height:
-            500px;
-
-        background-attachment:
-            scroll;
-
-        background-position:
-            center center;
-
-    }
-
-
-    .hero-content {
-
-        padding:
-            20px 10px;
-
-    }
-
-
-    .pre-title {
-
-        font-size:
-            .56rem;
-
-        letter-spacing:
-            4px;
-
-        margin-bottom:
-            12px;
-
-    }
-
-
-    h1 {
-
-        font-size:
-            clamp(
-                3.8rem,
-                16vw,
-                5.5rem
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boda Germán & Andrea</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Montserrat:wght@200;300;400;500&family=Great+Vibes&display=swap');
+
+        /* =========================================================
+           PALETA BOTÁNICA — MÁS VERDE Y NATURAL
+        ========================================================= */
+        :root {
+            --verde-bosque: #294936;
+            --verde-profundo: #1f3b2b;
+            --verde-hoja: #4f704f;
+            --verde-salvia: #8fa78b;
+            --verde-claro: #c9d8c2;
+            --verde-pálido: #e7eee3;
+
+            --cafe-oscuro: #4a392d;
+            --cafe-medio: #715844;
+            --cafe-suave: #a58b72;
+
+            --marfil: #faf8f2;
+            --crema: #f4efe6;
+            --blanco: #ffffff;
+
+            --shadow-soft: 0 10px 40px rgba(45, 65, 48, 0.09);
+            --shadow-hover: 0 16px 50px rgba(45, 65, 48, 0.15);
+
+            --border-radius: 7px;
+            --transition-smooth: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* =========================================================
+           RESET
+        ========================================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            background: var(--marfil);
+            color: var(--cafe-oscuro);
+            text-align: center;
+            overflow-x: hidden;
+            line-height: 1.5;
+            animation: pageFadeIn 1.5s ease-in-out;
+        }
+
+        @keyframes pageFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(12px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================================================
+           HERO / ENCABEZADO
+        ========================================================= */
+        .hero {
+            position: relative;
+            height: 82vh;
+            min-height: 560px;
+
+            /*
+             * La imagen se aleja para mostrar mejor a la pareja.
+             * 115% evita que el navegador haga un zoom excesivo.
+             */
+            background-image: url('imagen.jpeg');
+            background-size: 115%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+
+            display: flex;
+            justify-content: center;
+
+            /*
+             * El contenido inicia más abajo.
+             */
+            align-items: center;
+
+            overflow: hidden;
+        }
+
+        /*
+         * Capa extremadamente ligera.
+         * Mantiene visible el azul claro de la fotografía.
+         */
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    to bottom,
+                    rgba(255,255,255,0.03) 0%,
+                    rgba(255,255,255,0.00) 45%,
+                    rgba(255,255,255,0.04) 70%,
+                    rgba(250,248,242,0.28) 100%
+                );
+
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        /*
+         * Suaviza únicamente la parte inferior para conectar
+         * visualmente la fotografía con el contenido.
+         */
+        .hero::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: 18%;
+
+            background: linear-gradient(
+                to bottom,
+                rgba(250,248,242,0),
+                rgba(250,248,242,0.82)
             );
 
-    }
+            z-index: 1;
+            pointer-events: none;
+        }
 
+        /* =========================================================
+           VEGETACIÓN DEL ENCABEZADO
+        ========================================================= */
 
-    .hero-date {
+        .botanical {
+            position: absolute;
+            z-index: 3;
+            pointer-events: none;
+            line-height: 1;
+            user-select: none;
+        }
 
-        font-size:
-            .61rem;
+        .botanical span {
+            display: block;
+            position: absolute;
+        }
 
-        letter-spacing:
-            3px;
+        /* Rama superior izquierda */
+        .botanical.top-left {
+            top: -5px;
+            left: -5px;
+            width: 190px;
+            height: 230px;
+            transform: rotate(-8deg);
+        }
 
-    }
+        .botanical.top-left .branch {
+            font-size: 7rem;
+            color: rgba(31,59,43,0.72);
+            transform: rotate(-28deg);
+        }
 
+        .botanical.top-left .leaf1 {
+            top: 62px;
+            left: 72px;
+            font-size: 3.8rem;
+            color: rgba(79,112,79,0.72);
+            transform: rotate(-22deg);
+        }
 
-    .hero-location {
+        .botanical.top-left .leaf2 {
+            top: 115px;
+            left: 32px;
+            font-size: 4.2rem;
+            color: rgba(41,73,54,0.65);
+            transform: rotate(12deg);
+        }
 
-        font-size:
-            .95rem;
+        .botanical.top-left .leaf3 {
+            top: 155px;
+            left: 94px;
+            font-size: 3.2rem;
+            color: rgba(143,167,139,0.85);
+            transform: rotate(-35deg);
+        }
 
-    }
+        /* Rama superior derecha */
+        .botanical.top-right {
+            top: -10px;
+            right: -10px;
+            width: 200px;
+            height: 240px;
+            transform: rotate(10deg);
+        }
 
+        .botanical.top-right .branch {
+            font-size: 7.5rem;
+            color: rgba(31,59,43,0.68);
+            transform: rotate(30deg);
+        }
 
-    .botanical-1 {
+        .botanical.top-right .leaf1 {
+            top: 65px;
+            right: 65px;
+            font-size: 4rem;
+            color: rgba(79,112,79,0.75);
+            transform: rotate(20deg);
+        }
 
-        left:
-            12px;
+        .botanical.top-right .leaf2 {
+            top: 125px;
+            right: 28px;
+            font-size: 4.5rem;
+            color: rgba(41,73,54,0.68);
+            transform: rotate(-10deg);
+        }
 
-        top:
-            10%;
+        .botanical.top-right .leaf3 {
+            top: 160px;
+            right: 90px;
+            font-size: 3rem;
+            color: rgba(143,167,139,0.85);
+            transform: rotate(35deg);
+        }
 
-        font-size:
-            28px;
+        /* Vegetación inferior */
+        .botanical.bottom-left {
+            bottom: -35px;
+            left: -15px;
+            width: 190px;
+            height: 190px;
+            transform: rotate(8deg);
+        }
 
-    }
+        .botanical.bottom-left .branch {
+            font-size: 7rem;
+            color: rgba(41,73,54,0.65);
+            transform: rotate(15deg);
+        }
 
+        .botanical.bottom-left .leaf1 {
+            top: 40px;
+            left: 80px;
+            font-size: 4.2rem;
+            color: rgba(79,112,79,0.70);
+            transform: rotate(-25deg);
+        }
 
-    .botanical-2 {
+        .botanical.bottom-left .leaf2 {
+            top: 95px;
+            left: 35px;
+            font-size: 3.8rem;
+            color: rgba(31,59,43,0.68);
+            transform: rotate(20deg);
+        }
 
-        right:
-            12px;
+        /* Inferior derecha */
+        .botanical.bottom-right {
+            bottom: -40px;
+            right: -10px;
+            width: 210px;
+            height: 200px;
+            transform: rotate(-8deg);
+        }
 
-        top:
-            14%;
+        .botanical.bottom-right .branch {
+            font-size: 7.5rem;
+            color: rgba(31,59,43,0.70);
+            transform: rotate(-20deg);
+        }
 
-        font-size:
-            25px;
+        .botanical.bottom-right .leaf1 {
+            top: 45px;
+            right: 70px;
+            font-size: 4.4rem;
+            color: rgba(79,112,79,0.72);
+            transform: rotate(30deg);
+        }
 
-    }
+        .botanical.bottom-right .leaf2 {
+            top: 100px;
+            right: 25px;
+            font-size: 4rem;
+            color: rgba(143,167,139,0.88);
+            transform: rotate(-18deg);
+        }
 
+        /* =========================================================
+           TEXTO SOBRE LA FOTOGRAFÍA
+        ========================================================= */
 
-    .botanical-3 {
+        .hero-content {
+            position: relative;
+            z-index: 4;
 
-        left:
-            15px;
+            /*
+             * Más abajo dentro del encabezado.
+             */
+            margin-top: 115px;
 
-        bottom:
-            15%;
+            padding: 25px 35px;
 
-    }
+            /*
+             * SIN tarjeta.
+             * SIN fondo.
+             * SIN borde.
+             */
+            background: transparent;
+            border: none;
+            backdrop-filter: none;
 
+            animation: contentReveal 1.8s ease-out 0.3s both;
+        }
 
-    .botanical-4 {
+        @keyframes contentReveal {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
 
-        right:
-            15px;
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-        bottom:
-            14%;
+        /*
+         * Nombres en verde bosque suave.
+         * Se busca que armonicen con el fondo azul y las camisas
+         * claras de la pareja.
+         */
+        h1 {
+            font-family: 'Great Vibes', 'Alex Brush', cursive;
 
-    }
+            font-size: 6.2em;
+            font-weight: 400;
+            line-height: 1.1;
 
+            letter-spacing: 2px;
 
-    /* CONTADOR */
+            color: #31543e;
 
-    .countdown-wrapper {
+            text-shadow:
+                0 2px 3px rgba(255,255,255,0.75),
+                0 5px 18px rgba(255,255,255,0.45);
 
-        width:
-            94%;
+            margin: 0;
+        }
 
-        margin-top:
-            -28px;
+        .names-divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-        padding:
-            13px 6px 15px;
+            gap: 18px;
+            margin: 8px 0 10px;
+        }
 
-    }
+        .names-divider .line {
+            width: 75px;
+            height: 1px;
 
-
-    .countdown-title {
-
-        font-size:
-            .44rem;
-
-        letter-spacing:
-            1.8px;
-
-        margin-bottom:
-            8px;
-
-    }
-
-
-    .time-box {
-
-        padding:
-            2px 3px;
-
-        gap:
-            3px;
-
-    }
-
-
-    .time-number {
-
-        font-size:
-            clamp(
-                1.3rem,
-                7vw,
-                1.9rem
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(49,84,62,0.85),
+                transparent
             );
+        }
 
-    }
+        .names-divider .heart-icon {
+            font-size: 1.1rem;
+            color: #31543e;
 
+            text-shadow:
+                0 1px 5px rgba(255,255,255,0.8);
 
-    .time-label {
+            animation: heartPulse 2.5s ease-in-out infinite;
+        }
 
-        font-size:
-            .37rem;
+        @keyframes heartPulse {
+            0%,100% {
+                transform: scale(1);
+            }
 
-        letter-spacing:
-            .4px;
+            50% {
+                transform: scale(1.18);
+            }
+        }
 
-    }
+        .date {
+            font-family: 'Montserrat', sans-serif;
 
+            font-size: 1.05em;
+            font-weight: 400;
 
-    /* TARJETAS */
+            letter-spacing: 5px;
+            text-transform: uppercase;
 
-    .section {
+            color: #31543e;
 
-        padding:
-            42px 20px;
+            text-shadow:
+                0 1px 4px rgba(255,255,255,0.9);
 
-    }
+            margin-top: 8px;
+        }
 
+        /* =========================================================
+           CONTENEDOR
+        ========================================================= */
 
-    .details {
+        .container {
+            max-width: 720px;
 
-        font-size:
-            1.2rem;
+            /*
+             * El contenido entra ligeramente sobre el final
+             * de la fotografía.
+             */
+            margin: -45px auto 0;
 
-    }
+            padding: 0 20px 60px;
 
+            position: relative;
+            z-index: 5;
+        }
 
-    .place {
+        /* =========================================================
+           AUDIO
+        ========================================================= */
 
-        font-size:
-            1.35rem;
+        .audio-container {
+            background: rgba(255,255,255,0.96);
 
-    }
+            padding: 30px 25px;
 
+            border-radius: var(--border-radius);
 
-    .address {
+            box-shadow: var(--shadow-soft);
 
-        font-size:
-            1rem;
+            margin-bottom: 40px;
 
-    }
+            display: flex;
+            flex-direction: column;
+            align-items: center;
 
+            border: 1px solid rgba(79,112,79,0.22);
 
-    /* VESTIMENTA */
+            border-top: 3px solid var(--verde-hoja);
 
-    .dress-row {
+            position: relative;
 
-        grid-template-columns:
-            1fr;
+            transition: var(--transition-smooth);
+        }
 
-    }
+        .audio-container:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-3px);
+        }
 
+        .audio-container::before {
+            content: '♪';
 
-    .colors {
+            position: absolute;
+            top: -17px;
+            left: 50%;
 
-        gap:
-            18px;
+            transform: translateX(-50%);
 
-    }
+            font-size: 1.35rem;
 
+            color: var(--verde-hoja);
 
-    .gift-main {
+            background: var(--marfil);
 
-        font-size:
-            1.35rem;
+            padding: 0 12px;
 
-    }
+            line-height: 1;
+        }
 
+        .audio-container p {
+            font-family: 'Montserrat', sans-serif;
 
-}
+            font-size: 0.8em;
 
+            letter-spacing: 3px;
 
-/* =====================================================
-   TELÉFONOS MUY PEQUEÑOS
-===================================================== */
+            text-transform: uppercase;
 
-@media(max-width:380px) {
+            color: var(--verde-bosque);
 
+            margin-bottom: 18px;
 
-    .hero {
+            font-weight: 500;
+        }
 
-        height:
-            520px;
+        audio {
+            width: 100%;
+            max-width: 360px;
+            height: 38px;
+            outline: none;
+        }
 
-    }
+        audio::-webkit-media-controls-panel {
+            background-color: var(--verde-pálido);
+        }
 
+        /* =========================================================
+           SECCIONES
+        ========================================================= */
 
-    h1 {
+        .section {
+            position: relative;
 
-        font-size:
-            3.3rem;
+            margin-bottom: 30px;
 
-    }
+            padding: 52px 40px 48px;
 
+            background: rgba(255,255,255,0.97);
 
-    .countdown-wrapper {
+            border-radius: var(--border-radius);
 
-        padding-left:
-            3px;
+            box-shadow: var(--shadow-soft);
 
-        padding-right:
-            3px;
+            border: 1px solid rgba(79,112,79,0.20);
 
-    }
+            overflow: hidden;
 
+            transition: var(--transition-smooth);
 
-    .time-box {
+            animation: sectionIn 0.8s ease-out both;
+        }
 
-        padding:
-            2px;
+        .section:hover {
+            box-shadow: var(--shadow-hover);
+            transform: translateY(-4px);
 
-        gap:
-            2px;
+            border-color: rgba(79,112,79,0.40);
+        }
 
-    }
+        @keyframes sectionIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
 
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-    .time-number {
+        .section:nth-child(1) {
+            animation-delay: 0.2s;
+        }
 
-        font-size:
-            1.22rem;
+        .section:nth-child(2) {
+            animation-delay: 0.35s;
+        }
 
-    }
+        .section:nth-child(3) {
+            animation-delay: 0.5s;
+        }
 
+        .section:nth-child(4) {
+            animation-delay: 0.65s;
+        }
 
-    .time-label {
+        .section:nth-child(5) {
+            animation-delay: 0.8s;
+        }
 
-        font-size:
-            .34rem;
+        /* Línea superior */
+        .section::before {
+            content: '';
 
-    }
+            position: absolute;
 
+            top: 0;
+            left: 18%;
+            right: 18%;
 
-    .section {
+            height: 2px;
 
-        padding:
-            38px 17px;
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--verde-salvia),
+                    var(--verde-bosque),
+                    var(--verde-salvia),
+                    transparent
+                );
 
-    }
+            border-radius: 50%;
+        }
 
-}
+        /* Línea inferior */
+        .section::after {
+            content: '';
 
+            position: absolute;
 
-/* =====================================================
-   ACCESIBILIDAD
-===================================================== */
+            bottom: 0;
+            left: 18%;
+            right: 18%;
 
-@media(prefers-reduced-motion: reduce) {
+            height: 2px;
 
-    *,
-    *::before,
-    *::after {
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--verde-salvia),
+                    var(--verde-bosque),
+                    var(--verde-salvia),
+                    transparent
+                );
 
-        animation-duration:
-            .01ms !important;
+            border-radius: 50%;
+        }
 
-        animation-iteration-count:
-            1 !important;
+        /* =========================================================
+           MARCA DE AGUA BOTÁNICA
+        ========================================================= */
 
-        transition-duration:
-            .01ms !important;
+        .section .watermark {
+            position: absolute;
 
-        scroll-behavior:
-            auto !important;
+            right: -12px;
+            bottom: -25px;
 
-    }
+            font-family: 'Great Vibes', cursive;
 
-}
+            font-size: 8rem;
 
-</style>
+            color: rgba(79,112,79,0.045);
 
+            pointer-events: none;
+
+            transform: rotate(-12deg);
+
+            line-height: 1;
+        }
+
+        .section .leaf-watermark {
+            position: absolute;
+
+            left: -25px;
+            bottom: -15px;
+
+            font-size: 5rem;
+
+            color: rgba(41,73,54,0.045);
+
+            transform: rotate(20deg);
+
+            pointer-events: none;
+        }
+
+        /* =========================================================
+           ORNAMENTOS
+        ========================================================= */
+
+        .ornament {
+            color: var(--verde-hoja);
+
+            font-size: 1.45em;
+
+            margin-bottom: 12px;
+
+            display: block;
+
+            letter-spacing: 7px;
+
+            opacity: 0.9;
+        }
+
+        .section h2 {
+            font-family: 'Montserrat', sans-serif;
+
+            color: var(--verde-bosque);
+
+            font-size: 1.12em;
+
+            letter-spacing: 4px;
+
+            text-transform: uppercase;
+
+            margin-bottom: 28px;
+
+            font-weight: 500;
+
+            position: relative;
+
+            display: inline-block;
+        }
+
+        .section h2::after {
+            content: '';
+
+            position: absolute;
+
+            bottom: -10px;
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            width: 42px;
+            height: 1px;
+
+            background: var(--verde-hoja);
+        }
+
+        /* =========================================================
+           DETALLES
+        ========================================================= */
+
+        .details {
+            font-size: 1.35em;
+
+            line-height: 1.7;
+
+            color: var(--cafe-oscuro);
+        }
+
+        .details p {
+            margin: 7px 0;
+        }
+
+        .strong-text {
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 0.78em;
+
+            font-weight: 500;
+
+            letter-spacing: 2px;
+
+            color: var(--verde-bosque);
+
+            display: block;
+
+            margin-top: 18px;
+
+            text-transform: uppercase;
+        }
+
+        /* =========================================================
+           DIVISORES BOTÁNICOS
+        ========================================================= */
+
+        .divider {
+            width: 70px;
+            height: 1px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    transparent,
+                    var(--verde-salvia),
+                    var(--verde-bosque),
+                    transparent
+                );
+
+            margin: 23px auto;
+
+            position: relative;
+        }
+
+        .divider::after {
+            content: '❧';
+
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+
+            font-size: 1rem;
+
+            color: var(--verde-hoja);
+
+            background: white;
+
+            padding: 0 10px;
+        }
+
+        /* =========================================================
+           BOTÓN WHATSAPP
+        ========================================================= */
+
+        .btn {
+            display: inline-block;
+
+            font-family: 'Montserrat', sans-serif;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    var(--verde-bosque),
+                    var(--verde-hoja)
+                );
+
+            color: white;
+
+            padding: 16px 45px;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-size: 0.82em;
+
+            letter-spacing: 3px;
+
+            text-transform: uppercase;
+
+            margin-top: 30px;
+
+            transition: var(--transition-smooth);
+
+            border: 1px solid var(--verde-bosque);
+
+            font-weight: 500;
+
+            box-shadow:
+                0 5px 18px rgba(41,73,54,0.25);
+        }
+
+        .btn:hover {
+            background: white;
+
+            color: var(--verde-bosque);
+
+            transform: translateY(-3px);
+
+            box-shadow:
+                0 9px 25px rgba(41,73,54,0.18);
+        }
+
+        /* =========================================================
+           CÓDIGO DE VESTIMENTA
+        ========================================================= */
+
+        .dress-code-icons {
+            display: flex;
+
+            justify-content: center;
+
+            gap: 40px;
+
+            margin-top: 28px;
+
+            flex-wrap: wrap;
+        }
+
+        .color-item {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 12px;
+
+            font-family: 'Montserrat', sans-serif;
+
+            font-size: 0.7em;
+
+            text-transform: uppercase;
+
+            letter-spacing: 1.5px;
+
+            color: #888;
+        }
+
+        .color-circle {
+            width: 42px;
+            height: 42px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            justify-content: center;
+            align-items: center;
+
+            border: 2px solid #eee;
+
+            box-shadow:
+                0 4px 10px rgba(0,0,0,0.08);
+
+            position: relative;
+        }
+
+        .color-circle::after {
+            content: '✕';
+
+            position: absolute;
+
+            color: white;
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            text-shadow:
+                0 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .bg-green {
+            background:
+                linear-gradient(
+                    135deg,
+                    #294936,
+                    #587657
+                );
+        }
+
+        .bg-black {
+            background:
+                linear-gradient(
+                    135deg,
+                    #1a1a1a,
+                    #343434
+                );
+        }
+
+        .bg-white {
+            background:
+                linear-gradient(
+                    135deg,
+                    #ffffff,
+                    #eeeeea
+                );
+        }
+
+        .bg-white::after {
+            color: #aaa;
+        }
+
+        .color-note {
+            font-size: 0.85em !important;
+
+            font-style: italic;
+
+            color: #999 !important;
+
+            margin-top: 8px !important;
+        }
+
+        /* =========================================================
+           RESPONSIVE
+        ========================================================= */
+
+        @media (max-width: 768px) {
+
+            .hero {
+                height: 76vh;
+                min-height: 500px;
+
+                background-attachment: scroll;
+
+                /*
+                 * En móvil alejamos un poco más la foto.
+                 */
+                background-size: 125%;
+                background-position: center center;
+            }
+
+            .hero-content {
+                margin-top: 105px;
+                padding: 20px 15px;
+            }
+
+            h1 {
+                font-size: 4.5em;
+                letter-spacing: 1px;
+            }
+
+            .date {
+                font-size: 0.92em;
+                letter-spacing: 3px;
+            }
+
+            .names-divider .line {
+                width: 45px;
+            }
+
+            .container {
+                margin-top: -35px;
+                padding: 0 15px 45px;
+            }
+
+            .section {
+                padding: 42px 22px 38px;
+                margin-bottom: 25px;
+            }
+
+            .details {
+                font-size: 1.2em;
+            }
+
+            .dress-code-icons {
+                gap: 25px;
+            }
+
+            .color-circle {
+                width: 36px;
+                height: 36px;
+            }
+
+            .btn {
+                padding: 14px 35px;
+                font-size: 0.75em;
+                letter-spacing: 2px;
+            }
+
+            /*
+             * Vegetación más discreta en pantallas pequeñas.
+             */
+            .botanical {
+                opacity: 0.72;
+                transform: scale(0.75);
+            }
+
+            .botanical.top-left {
+                left: -35px;
+                top: -20px;
+            }
+
+            .botanical.top-right {
+                right: -40px;
+                top: -20px;
+            }
+
+            .botanical.bottom-left {
+                left: -35px;
+            }
+
+            .botanical.bottom-right {
+                right: -35px;
+            }
+        }
+
+        @media (max-width: 400px) {
+
+            .hero {
+                min-height: 460px;
+                background-size: 135%;
+            }
+
+            .hero-content {
+                margin-top: 95px;
+            }
+
+            h1 {
+                font-size: 3.5em;
+            }
+
+            .date {
+                font-size: 0.82em;
+                letter-spacing: 2px;
+            }
+
+            .section {
+                padding: 36px 15px 32px;
+            }
+
+            .section h2 {
+                font-size: 1em;
+                letter-spacing: 2px;
+            }
+
+            .botanical {
+                opacity: 0.55;
+                transform: scale(0.60);
+            }
+        }
+
+        /* =========================================================
+           SCROLLBAR
+        ========================================================= */
+
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--marfil);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--verde-salvia);
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--verde-hoja);
+        }
+
+    </style>
 </head>
-
 
 <body>
 
+    <!-- =========================================================
+         ENCABEZADO
+    ========================================================= -->
 
-<!-- =====================================================
-     HERO
-===================================================== -->
+    <div class="hero">
 
-<header class="hero">
-
-
-    <!-- Hojas flotantes -->
-
-    <span class="botanical botanical-1">
-        ❧
-    </span>
-
-
-    <span class="botanical botanical-2">
-        ❧
-    </span>
-
-
-    <span class="botanical botanical-3">
-        ❧
-    </span>
-
-
-    <span class="botanical botanical-4">
-        ❧
-    </span>
-
-
-    <!-- TEXTO SOBRE LA FOTO -->
-
-    <div class="hero-content">
-
-
-        <div class="pre-title">
-
-            Nuestra boda
-
+        <!-- Vegetación superior izquierda -->
+        <div class="botanical top-left">
+            <span class="branch">🌿</span>
+            <span class="leaf1">🍃</span>
+            <span class="leaf2">🌿</span>
+            <span class="leaf3">🍃</span>
         </div>
 
-
-        <h1>
-
-            Germán & Andrea
-
-        </h1>
-
-
-        <div class="hero-line"></div>
-
-
-        <div class="hero-date">
-
-            5 de diciembre · 2026
-
+        <!-- Vegetación superior derecha -->
+        <div class="botanical top-right">
+            <span class="branch">🌿</span>
+            <span class="leaf1">🍃</span>
+            <span class="leaf2">🌿</span>
+            <span class="leaf3">🍃</span>
         </div>
 
-
-        <div class="hero-location">
-
-            Ibagué · Tolima
-
+        <!-- Vegetación inferior izquierda -->
+        <div class="botanical bottom-left">
+            <span class="branch">🌿</span>
+            <span class="leaf1">🍃</span>
+            <span class="leaf2">🌿</span>
         </div>
 
+        <!-- Vegetación inferior derecha -->
+        <div class="botanical bottom-right">
+            <span class="branch">🌿</span>
+            <span class="leaf1">🍃</span>
+            <span class="leaf2">🌿</span>
+        </div>
+
+        <!-- Texto flotante -->
+        <div class="hero-content">
+
+            <h1>Germán & Andrea</h1>
+
+            <div class="names-divider">
+                <span class="line"></span>
+                <span class="heart-icon">♥</span>
+                <span class="line"></span>
+            </div>
+
+            <div class="date">
+                5 de Diciembre · 2026
+            </div>
+
+        </div>
 
     </div>
 
 
-</header>
+    <!-- =========================================================
+         CONTENIDO
+    ========================================================= -->
 
+    <div class="container">
 
+        <!-- Canción -->
+        <div class="audio-container">
 
-<!-- =====================================================
-     CONTADOR
-===================================================== -->
+            <p>Nuestra Canción</p>
 
-<section class="countdown-wrapper">
-
-
-    <div class="countdown-title">
-
-        El gran día está cada vez más cerca
-
-    </div>
-
-
-    <div
-        id="countdown"
-        class="countdown"
-    >
-
-
-        <div class="time-box">
-
-            <span
-                id="days"
-                class="time-number"
-            >
-                00
-            </span>
-
-            <span class="time-label">
-                Días
-            </span>
+            <audio controls>
+                <source src="Prometo.mp3" type="audio/mpeg">
+                Tu navegador no soporta el elemento de audio.
+            </audio>
 
         </div>
 
 
-        <div class="time-box">
+        <!-- =====================================================
+             CEREMONIA
+        ===================================================== -->
 
-            <span
-                id="hours"
-                class="time-number"
-            >
-                00
+        <div class="section">
+
+            <span class="watermark">G&A</span>
+            <span class="leaf-watermark">🍃</span>
+
+            <span class="ornament">
+                ❧ ✧ ❧
             </span>
 
-            <span class="time-label">
-                Horas
-            </span>
+            <h2>Ceremonia</h2>
+
+            <div class="details">
+
+                <span class="strong-text">
+                    4:00 PM
+                </span>
+
+                <p>
+                    Parroquia Santa Cruz Jerusalén
+                </p>
+
+                <div class="divider"></div>
+
+                <p>
+                    Ibagué - Tolima<br>
+                    Avenida Santa Cruz, calle 99, Cra 13 sur<br>
+                    Hacienda Santa Cruz
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="time-box">
+        <!-- =====================================================
+             RECEPCIÓN
+        ===================================================== -->
 
-            <span
-                id="minutes"
-                class="time-number"
-            >
-                00
+        <div class="section">
+
+            <span class="watermark">G&A</span>
+            <span class="leaf-watermark">🌿</span>
+
+            <span class="ornament">
+                ❧ ✧ ❧
             </span>
 
-            <span class="time-label">
-                Min
-            </span>
+            <h2>Recepción</h2>
+
+            <div class="details">
+
+                <span class="strong-text">
+                    7:00 PM
+                </span>
+
+                <p>
+                    Mirador Turístico Bellavista
+                </p>
+
+                <div class="divider"></div>
+
+                <p>
+                    Salado<br>
+                    Ibagué - Tolima<br>
+                    KM 2 Vía Vereda Chembe
+                </p>
+
+            </div>
 
         </div>
 
 
-        <div class="time-box">
+        <!-- =====================================================
+             CÓDIGO DE VESTIMENTA
+        ===================================================== -->
 
-            <span
-                id="seconds"
-                class="time-number"
-            >
-                00
+        <div class="section">
+
+            <span class="watermark">G&A</span>
+            <span class="leaf-watermark">🍃</span>
+
+            <span class="ornament">
+                ❧ ✧ ❧
             </span>
 
-            <span class="time-label">
-                Seg
-            </span>
+            <h2>Código de Vestimenta</h2>
 
-        </div>
+            <div class="details">
 
-
-    </div>
-
-
-    <div id="countdown-message">
-
-        ¡Hoy celebramos nuestro amor! ♥
-
-    </div>
-
-
-</section>
-
-
-
-<!-- =====================================================
-     CONTENIDO
-===================================================== -->
-
-<main class="container">
-
-
-    <!-- =================================================
-         MÚSICA
-    ================================================== -->
-
-    <section class="audio-container">
-
-
-        <div class="audio-label">
-
-            Nuestra canción
-
-        </div>
-
-
-        <audio
-            controls
-            preload="metadata"
-        >
-
-            <source
-                src="Prometo.mp3"
-                type="audio/mpeg"
-            >
-
-            Tu navegador no soporta
-            el elemento de audio.
-
-        </audio>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         CEREMONIA
-    ================================================== -->
-
-    <section class="section">
-
-
-        <span class="ornament">
-            ❧
-        </span>
-
-
-        <h2>
-            Ceremonia
-        </h2>
-
-
-        <div class="details">
-
-
-            <span class="time">
-
-                4:00 P. M.
-
-            </span>
-
-
-            <p class="place">
-
-                Parroquia Santa Cruz Jerusalén
-
-            </p>
-
-
-            <div class="divider"></div>
-
-
-            <p class="address">
-
-                Ibagué · Tolima
-
-                <br><br>
-
-                Avenida Santa Cruz,
-                calle 99,
-                Cra. 13 Sur
-
-                <br>
-
-                Hacienda Santa Cruz
-
-            </p>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         RECEPCIÓN
-    ================================================== -->
-
-    <section class="section">
-
-
-        <span class="ornament">
-            ❧
-        </span>
-
-
-        <h2>
-            Recepción
-        </h2>
-
-
-        <div class="details">
-
-
-            <span class="time">
-
-                7:00 P. M.
-
-            </span>
-
-
-            <p class="place">
-
-                Mirador Turístico Bellavista
-
-            </p>
-
-
-            <div class="divider"></div>
-
-
-            <p class="address">
-
-                Salado
-
-                <br>
-
-                Ibagué · Tolima
-
-                <br><br>
-
-                KM 2 Vía Vereda Chembe
-
-            </p>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         CÓDIGO DE VESTIMENTA
-    ================================================== -->
-
-    <section class="section">
-
-
-        <span class="ornament">
-            ❧
-        </span>
-
-
-        <h2>
-
-            Código de vestimenta
-
-        </h2>
-
-
-        <div class="dress-row">
-
-
-            <div class="dress-card">
-
-                <strong>
-                    Mujeres
-                </strong>
-
-                <span>
+                <p>
+                    <strong>Mujeres:</strong>
                     Vestido largo
+                </p>
+
+                <p>
+                    <strong>Hombres:</strong>
+                    Traje formal / camisa Guayabera
+                </p>
+
+                <span
+                    class="strong-text"
+                    style="margin-top:30px;"
+                >
+                    Tonos reservados
                 </span>
 
+                <p class="color-note">
+                    Agradecemos abstenerse de usar los siguientes colores:
+                </p>
+
+                <div class="dress-code-icons">
+
+                    <div class="color-item">
+
+                        <div class="color-circle bg-green"></div>
+
+                        <span>Verde</span>
+
+                    </div>
+
+                    <div class="color-item">
+
+                        <div class="color-circle bg-black"></div>
+
+                        <span>Negro</span>
+
+                    </div>
+
+                    <div class="color-item">
+
+                        <div class="color-circle bg-white"></div>
+
+                        <span>Blanco</span>
+
+                    </div>
+
+                </div>
+
             </div>
-
-
-            <div class="dress-card">
-
-                <strong>
-                    Hombres
-                </strong>
-
-                <span>
-                    Traje formal / Camisa Guayabera
-                </span>
-
-            </div>
-
 
         </div>
 
 
-        <div class="reserved-title">
+        <!-- =====================================================
+             MESA DE REGALOS
+        ===================================================== -->
 
-            Tonos reservados
+        <div class="section">
 
-        </div>
+            <span class="watermark">G&A</span>
+            <span class="leaf-watermark">🌿</span>
 
-
-        <p class="color-note">
-
-            Agradecemos evitar estos tonos
-            para que los protagonistas
-            de la celebración conserven
-            su paleta especial.
-
-        </p>
-
-
-        <div class="colors">
-
-
-            <div class="color-item">
-
-                <div
-                    class="color-circle verde"
-                ></div>
-
-                Verde
-
-            </div>
-
-
-            <div class="color-item">
-
-                <div
-                    class="color-circle negro"
-                ></div>
-
-                Negro
-
-            </div>
-
-
-            <div class="color-item">
-
-                <div
-                    class="color-circle blanco"
-                ></div>
-
-                Blanco
-
-            </div>
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- =================================================
-         MESA DE REGALOS
-    ================================================== -->
-
-    <section
-        class="section gift-section"
-    >
-
-
-        <span class="ornament">
-            ❧
-        </span>
-
-
-        <h2>
-
-            Mesa de regalos
-
-        </h2>
-
-
-        <div class="details">
-
-
-            <div class="gift-icon">
-
-                ♡
-
-            </div>
-
-
-            <p class="gift-main">
-
-                Tu presencia es nuestro
-                regalo más especial.
-
-            </p>
-
-
-            <p class="gift-text">
-
-                Queremos que este día sea
-                un encuentro para celebrar,
-                compartir y crear recuerdos
-                junto a las personas que
-                hacen parte de nuestra historia.
-
-                <br><br>
-
-                Si además deseas tener
-                un detalle con nosotros,
-                agradecemos de corazón
-                cualquier gesto que quieras
-                regalarnos para acompañarnos
-                en el comienzo de esta nueva etapa.
-
-            </p>
-
-
-            <span class="gift-highlight">
-
-                Lluvia de sobres
-
+            <span class="ornament">
+                ❧ ✧ ❧
             </span>
 
+            <h2>Mesa de Regalos</h2>
 
-            <p
-                class="gift-text"
-                style="margin-top:20px;"
-            >
+            <div class="details">
 
-                Gracias por acompañarnos,
-                por celebrar nuestro amor
-                y por ser parte de este
-                nuevo capítulo de nuestra vida.
+                <p>
+                    Tu presencia es nuestro regalo más especial.
+                </p>
 
-            </p>
+                <p>
+                    Queremos que este día sea un encuentro para
+                    celebrar, compartir y crear recuerdos junto a
+                    las personas que hacen parte de nuestra historia.
+                </p>
 
+                <div class="divider"></div>
 
-        </div>
+                <p>
+                    Si además deseas tener un detalle con nosotros,
+                    agradecemos de corazón cualquier gesto que quieras
+                    regalarnos para acompañarnos en el comienzo de
+                    esta nueva etapa.
+                </p>
 
+                <span class="strong-text">
+                    Lluvia de Sobres
+                </span>
 
-    </section>
+                <p>
+                    Gracias por acompañarnos, por celebrar nuestro amor
+                    y por ser parte de este nuevo capítulo de nuestra vida.
+                </p>
 
-
-
-    <!-- =================================================
-         ASISTENCIA
-    ================================================== -->
-
-    <section class="section">
-
-
-        <span class="ornament">
-            ❧
-        </span>
-
-
-        <h2>
-
-            Asistencia
-
-        </h2>
-
-
-        <div class="details">
-
-
-            <p class="place">
-
-                Queremos celebrar contigo
-
-            </p>
-
-
-            <div class="divider"></div>
-
-
-            <p class="address">
-
-                Nos haría muy felices
-                compartir este día
-                tan especial contigo.
-
-                <br><br>
-
-                Por favor, confírmanos
-                tu compañía.
-
-            </p>
-
-
-            <a
-                href="https://wa.me/573208640848?text=Hola,%20confirmo%20con%20mucha%20alegría%20mi%20asistencia%20a%20la%20boda%20de%20Germán%20y%20Andrea"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="btn"
-            >
-
-                Confirmar asistencia
-
-            </a>
-
+            </div>
 
         </div>
 
 
-    </section>
+        <!-- =====================================================
+             ASISTENCIA
+        ===================================================== -->
 
+        <div class="section">
 
-</main>
+            <span class="watermark">G&A</span>
+            <span class="leaf-watermark">🍃</span>
 
+            <span class="ornament">
+                ❧ ✧ ❧
+            </span>
 
+            <h2>Asistencia</h2>
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
+            <div class="details">
 
-<footer>
+                <p>
+                    Nos haría muy felices compartir este día contigo.
+                    <br>
+                    Por favor, confírmanos tu compañía.
+                </p>
 
+                <a
+                    href="https://wa.me/573208640848?text=Hola,%20confirmo%20con%20mucha%20alegría%20mi%20asistencia%20a%20la%20boda%20de%20Germán%20y%20Andrea"
+                    target="_blank"
+                    class="btn"
+                >
+                    Confirmar Asistencia
+                </a>
 
-    <div class="footer-names">
+            </div>
 
-        Germán & Andrea
+        </div>
 
     </div>
-
-
-    <div class="footer-text">
-
-        5 · 12 · 2026
-
-    </div>
-
-
-</footer>
-
-
-
-<!-- =====================================================
-     CONTADOR
-===================================================== -->
-
-<script>
-
-
-/*
-=========================================================
-FECHA DE LA BODA
-
-5 de diciembre de 2026
-4:00 PM
-=========================================================
-*/
-
-const weddingDate =
-    new Date(
-        "December 5, 2026 16:00:00"
-    ).getTime();
-
-
-
-/*
-=========================================================
-ACTUALIZAR CONTADOR
-=========================================================
-*/
-
-function updateCountdown() {
-
-
-    const now =
-        new Date().getTime();
-
-
-    const difference =
-        weddingDate - now;
-
-
-
-    /*
-       CUANDO LLEGUE EL MOMENTO
-    */
-
-    if (difference <= 0) {
-
-
-        document
-            .getElementById("countdown")
-            .style.display =
-                "none";
-
-
-        document
-            .getElementById("countdown-message")
-            .style.display =
-                "block";
-
-
-        return;
-
-    }
-
-
-
-    /*
-       DÍAS
-    */
-
-    const days =
-        Math.floor(
-            difference /
-            (
-                1000 *
-                60 *
-                60 *
-                24
-            )
-        );
-
-
-
-    /*
-       HORAS
-    */
-
-    const hours =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60 *
-                    60 *
-                    24
-                )
-            ) /
-            (
-                1000 *
-                60 *
-                60
-            )
-        );
-
-
-
-    /*
-       MINUTOS
-    */
-
-    const minutes =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60 *
-                    60
-                )
-            ) /
-            (
-                1000 *
-                60
-            )
-        );
-
-
-
-    /*
-       SEGUNDOS
-    */
-
-    const seconds =
-        Math.floor(
-            (
-                difference %
-                (
-                    1000 *
-                    60
-                )
-            ) /
-            1000
-        );
-
-
-
-    /*
-       MOSTRAR
-    */
-
-    document
-        .getElementById("days")
-        .textContent =
-            String(days)
-            .padStart(2,"0");
-
-
-    document
-        .getElementById("hours")
-        .textContent =
-            String(hours)
-            .padStart(2,"0");
-
-
-    document
-        .getElementById("minutes")
-        .textContent =
-            String(minutes)
-            .padStart(2,"0");
-
-
-    document
-        .getElementById("seconds")
-        .textContent =
-            String(seconds)
-            .padStart(2,"0");
-
-}
-
-
-/*
-=========================================================
-INICIAR
-=========================================================
-*/
-
-updateCountdown();
-
-
-/*
-=========================================================
-ACTUALIZAR CADA SEGUNDO
-=========================================================
-*/
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-</script>
-
 
 </body>
-
 </html>
