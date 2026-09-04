@@ -227,8 +227,11 @@ body::before {
     background-position:
         center center;
 
+    background-repeat:
+        no-repeat;
+
     background-attachment:
-        fixed;
+        scroll;
 
     padding-bottom:
         10vh;
@@ -802,68 +805,6 @@ h1 {
 
 
 /* =====================================================
-   ELEMENTOS BOTÁNICOS LATERALES
-===================================================== */
-
-.container::before {
-
-    content:
-        "🌿";
-
-    position:
-        fixed;
-
-    left:
-        1.5%;
-
-    top:
-        45%;
-
-    font-size:
-        80px;
-
-    opacity:
-        .06;
-
-    transform:
-        rotate(-25deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-.container::after {
-
-    content:
-        "🌿";
-
-    position:
-        fixed;
-
-    right:
-        1.5%;
-
-    top:
-        60%;
-
-    font-size:
-        80px;
-
-    opacity:
-        .06;
-
-    transform:
-        rotate(25deg);
-
-    pointer-events:
-        none;
-
-}
-
-
-/* =====================================================
    MÚSICA
 ===================================================== */
 
@@ -1099,6 +1040,9 @@ audio {
     opacity:
         .8;
 
+    text-align:
+        center;
+
 }
 
 
@@ -1327,6 +1271,9 @@ audio {
     box-shadow:
         0 4px 12px rgba(0,0,0,.03);
 
+    text-align:
+        center;
+
 }
 
 
@@ -1392,6 +1339,9 @@ audio {
     margin-bottom:
         10px;
 
+    text-align:
+        center;
+
 }
 
 
@@ -1405,6 +1355,9 @@ audio {
 
     font-style:
         italic;
+
+    text-align:
+        center;
 
 }
 
@@ -1443,6 +1396,9 @@ audio {
 
     color:
         var(--texto-suave);
+
+    text-align:
+        center;
 
 }
 
@@ -1527,7 +1483,8 @@ audio {
     margin-bottom:
         14px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
@@ -1546,7 +1503,8 @@ audio {
     margin-bottom:
         22px;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
@@ -1568,7 +1526,8 @@ audio {
     line-height:
         1.8;
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
@@ -1617,7 +1576,8 @@ audio {
     box-shadow:
         var(--sombra-suave);
 
-    text-align: center;
+    text-align:
+        center;
 
 }
 
@@ -1787,9 +1747,6 @@ footer::before {
 
         min-height:
             520px;
-
-        background-attachment:
-            scroll;
 
         background-position:
             center center;
