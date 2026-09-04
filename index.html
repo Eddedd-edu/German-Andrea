@@ -26,7 +26,7 @@
 >
 
 <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
     rel="stylesheet"
 >
 
@@ -34,44 +34,46 @@
 <style>
 
 /* =====================================================
-   PALETA BOTÁNICA TROPICAL
+   PALETA BOTÁNICA TROPICAL ELEGANTE
 ===================================================== */
 
 :root {
 
-    --verde-selva: #263d2d;
+    --verde-selva: #1e3325;
 
-    --verde-bosque: #38513d;
+    --verde-bosque: #2f4638;
 
-    --verde-oliva: #66785b;
+    --verde-oliva: #5c7053;
 
-    --verde-salvia: #a8b69d;
+    --verde-salvia: #9cae93;
 
-    --verde-claro: #dfe6d8;
+    --verde-claro: #dce4d6;
 
-    --cafe-oscuro: #49372b;
+    --cafe-oscuro: #3f2f24;
 
-    --cafe-madera: #735943;
+    --cafe-madera: #6b513d;
 
-    --cafe-claro: #ad9070;
+    --cafe-claro: #a58b72;
 
-    --arena: #e5d6c0;
+    --arena: #e3d5c0;
 
     --marfil: #faf7f0;
 
-    --crema: #f3ede3;
+    --crema: #f4efe6;
 
     --blanco: #ffffff;
 
-    --texto: #473c33;
+    --texto: #4a3f35;
 
     --texto-suave: #75695e;
 
-    --sombra:
-        0 15px 45px rgba(38,61,45,.11);
+    --sombra-suave: 0 10px 30px rgba(38, 61, 45, 0.08);
 
-    --sombra-hover:
-        0 22px 55px rgba(38,61,45,.18);
+    --sombra-media: 0 15px 45px rgba(38, 61, 45, 0.12);
+
+    --sombra-hover: 0 22px 55px rgba(38, 61, 45, 0.18);
+
+    --borde-orgánico: 8px;
 
 }
 
@@ -108,33 +110,29 @@ body {
         var(--texto);
 
     line-height:
-        1.6;
+        1.65;
 
     overflow-x:
         hidden;
 
-    /*
-       Fondo botánico con varias capas
-    */
-
     background:
 
         radial-gradient(
-            circle at 5% 10%,
-            rgba(168,182,157,.28),
-            transparent 24%
+            circle at 10% 15%,
+            rgba(156,174,147,.18),
+            transparent 30%
         ),
 
         radial-gradient(
-            circle at 95% 30%,
-            rgba(115,89,67,.12),
-            transparent 25%
+            circle at 90% 40%,
+            rgba(107,81,61,.08),
+            transparent 35%
         ),
 
         radial-gradient(
-            circle at 20% 75%,
-            rgba(168,182,157,.18),
-            transparent 25%
+            circle at 25% 80%,
+            rgba(156,174,147,.12),
+            transparent 30%
         ),
 
         var(--marfil);
@@ -143,7 +141,7 @@ body {
 
 
 /* =====================================================
-   TEXTURA BOTÁNICA GENERAL
+   TEXTURA BOTÁNICA GENERAL (hojas sutiles)
 ===================================================== */
 
 body::before {
@@ -158,20 +156,38 @@ body::before {
 
     z-index: -1;
 
-    opacity: .22;
+    opacity: .18;
 
     background-image:
 
         radial-gradient(
-            ellipse at 20% 20%,
+            ellipse at 30% 30%,
             transparent 0,
             transparent 70%,
-            rgba(56,81,61,.08) 71%,
+            rgba(47,70,56,.08) 71%,
             transparent 72%
+        ),
+
+        radial-gradient(
+            ellipse at 70% 60%,
+            transparent 0,
+            transparent 65%,
+            rgba(47,70,56,.06) 66%,
+            transparent 67%
+        ),
+
+        radial-gradient(
+            ellipse at 50% 90%,
+            transparent 0,
+            transparent 75%,
+            rgba(107,81,61,.06) 76%,
+            transparent 77%
         );
 
     background-size:
-        150px 150px;
+        220px 220px,
+        280px 280px,
+        240px 240px;
 
 }
 
@@ -187,9 +203,9 @@ body::before {
 
     width: 100%;
 
-    height: 88vh;
+    height: 90vh;
 
-    min-height: 570px;
+    min-height: 600px;
 
     display: flex;
 
@@ -215,41 +231,7 @@ body::before {
         fixed;
 
     padding-bottom:
-        9vh;
-
-}
-
-
-/*
-   Solamente un degradado muy suave en la parte inferior.
-   NO oscurece la fotografía.
-*/
-
-.hero::after {
-
-    content: "";
-
-    position: absolute;
-
-    left: 0;
-
-    right: 0;
-
-    bottom: 0;
-
-    height: 125px;
-
-    background:
-
-        linear-gradient(
-            to bottom,
-            transparent,
-            var(--marfil)
-        );
-
-    z-index: 2;
-
-    pointer-events: none;
+        10vh;
 
 }
 
@@ -266,7 +248,11 @@ body::before {
 
     width: 100%;
 
-    padding: 20px;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 30px 25px;
 
     background: transparent;
 
@@ -287,7 +273,7 @@ body::before {
         opacity: 0;
 
         transform:
-            translateY(25px);
+            translateY(30px);
 
     }
 
@@ -310,23 +296,23 @@ body::before {
         sans-serif;
 
     font-size:
-        .68rem;
+        .72rem;
 
     letter-spacing:
-        7px;
+        8px;
 
     text-transform:
         uppercase;
 
     color:
-        white;
+        #ffffff;
 
     margin-bottom:
-        15px;
+        18px;
 
     text-shadow:
-        0 3px 14px rgba(0,0,0,.9),
-        0 1px 4px rgba(0,0,0,.8);
+        0 3px 12px rgba(0,0,0,.7),
+        0 1px 3px rgba(0,0,0,.5);
 
 }
 
@@ -339,9 +325,9 @@ h1 {
 
     font-size:
         clamp(
-            4.5rem,
-            11vw,
-            8rem
+            5rem,
+            12vw,
+            9rem
         );
 
     font-weight:
@@ -351,18 +337,18 @@ h1 {
         .95;
 
     color:
-        white;
+        #ffffff;
 
     letter-spacing:
-        1px;
+        2px;
 
     text-shadow:
 
-        0 4px 8px rgba(0,0,0,.85),
+        0 4px 8px rgba(0,0,0,.5),
 
-        0 10px 30px rgba(0,0,0,.6),
+        0 10px 30px rgba(0,0,0,.45),
 
-        0 2px 4px rgba(0,0,0,.5);
+        0 2px 4px rgba(0,0,0,.35);
 
 }
 
@@ -370,19 +356,19 @@ h1 {
 .hero-line {
 
     width:
-        90px;
+        100px;
 
     height:
         1px;
 
     margin:
-        22px auto;
+        26px auto;
 
     background:
-        rgba(255,255,255,.9);
+        rgba(255,255,255,.85);
 
     box-shadow:
-        0 2px 10px rgba(0,0,0,.7);
+        0 2px 8px rgba(0,0,0,.5);
 
 }
 
@@ -394,20 +380,20 @@ h1 {
         sans-serif;
 
     font-size:
-        .78rem;
+        .82rem;
 
     letter-spacing:
-        5px;
+        6px;
 
     text-transform:
         uppercase;
 
     color:
-        white;
+        #ffffff;
 
     text-shadow:
-        0 3px 12px rgba(0,0,0,.9),
-        0 1px 4px rgba(0,0,0,.7);
+        0 3px 12px rgba(0,0,0,.7),
+        0 1px 3px rgba(0,0,0,.5);
 
 }
 
@@ -415,20 +401,20 @@ h1 {
 .hero-location {
 
     margin-top:
-        8px;
+        12px;
 
     font-size:
-        1.1rem;
+        1.2rem;
 
     font-style:
         italic;
 
     color:
-        white;
+        #ffffff;
 
     text-shadow:
-        0 3px 12px rgba(0,0,0,.9),
-        0 1px 4px rgba(0,0,0,.7);
+        0 3px 12px rgba(0,0,0,.7),
+        0 1px 3px rgba(0,0,0,.5);
 
 }
 
@@ -446,13 +432,13 @@ h1 {
         4;
 
     color:
-        rgba(255,255,255,.72);
+        rgba(255,255,255,.65);
 
     pointer-events:
         none;
 
     text-shadow:
-        0 2px 10px rgba(0,0,0,.35);
+        0 2px 10px rgba(0,0,0,.4);
 
     animation:
         leafFloat 7s ease-in-out infinite;
@@ -463,13 +449,13 @@ h1 {
 .botanical-1 {
 
     top:
-        12%;
+        14%;
 
     left:
-        5%;
+        6%;
 
     font-size:
-        42px;
+        48px;
 
     transform:
         rotate(-25deg);
@@ -480,16 +466,16 @@ h1 {
 .botanical-2 {
 
     top:
-        20%;
+        22%;
 
     right:
-        6%;
+        7%;
 
     font-size:
-        32px;
+        38px;
 
     animation-delay:
-        1.5s;
+        1.2s;
 
 }
 
@@ -497,16 +483,16 @@ h1 {
 .botanical-3 {
 
     bottom:
-        19%;
+        22%;
 
     left:
-        7%;
+        8%;
 
     font-size:
-        28px;
+        32px;
 
     animation-delay:
-        3s;
+        2.8s;
 
 }
 
@@ -514,16 +500,16 @@ h1 {
 .botanical-4 {
 
     bottom:
-        16%;
+        18%;
 
     right:
-        7%;
+        9%;
 
     font-size:
-        40px;
+        46px;
 
     animation-delay:
-        4.5s;
+        4s;
 
 }
 
@@ -542,8 +528,8 @@ h1 {
     50% {
 
         transform:
-            translateY(-12px)
-            rotate(7deg);
+            translateY(-15px)
+            rotate(8deg);
 
     }
 
@@ -563,23 +549,29 @@ h1 {
         10;
 
     width:
-        min(92%,720px);
+        min(92%, 720px);
 
     margin:
-        -38px auto 50px;
+        -45px auto 50px;
 
     padding:
-        15px 20px 17px;
+        22px 25px 24px;
 
     background:
-        rgba(255,255,255,.97);
+        rgba(255, 255, 255, 0.98);
 
     border:
         1px solid
-        rgba(56,81,61,.22);
+        rgba(47,70,56,.25);
+
+    border-radius:
+        var(--borde-orgánico);
 
     box-shadow:
-        var(--sombra);
+        var(--sombra-media);
+
+    backdrop-filter:
+        blur(5px);
 
 }
 
@@ -593,19 +585,22 @@ h1 {
         absolute;
 
     left:
-        -18px;
+        -20px;
 
     top:
-        -18px;
+        -20px;
 
     color:
         var(--verde-oliva);
 
     font-size:
-        30px;
+        34px;
 
     transform:
         rotate(-25deg);
+
+    opacity:
+        .7;
 
 }
 
@@ -619,19 +614,22 @@ h1 {
         absolute;
 
     right:
-        -18px;
+        -20px;
 
     bottom:
-        -18px;
+        -20px;
 
     color:
         var(--cafe-madera);
 
     font-size:
-        30px;
+        34px;
 
     transform:
         rotate(155deg);
+
+    opacity:
+        .7;
 
 }
 
@@ -646,10 +644,10 @@ h1 {
         var(--verde-bosque);
 
     font-size:
-        .52rem;
+        .55rem;
 
     letter-spacing:
-        3px;
+        4px;
 
     text-transform:
         uppercase;
@@ -658,7 +656,7 @@ h1 {
         center;
 
     margin-bottom:
-        10px;
+        14px;
 
 }
 
@@ -695,14 +693,14 @@ h1 {
         center;
 
     gap:
-        5px;
+        6px;
 
     padding:
-        2px 10px;
+        2px 12px;
 
     border-right:
         1px solid
-        rgba(104,118,91,.20);
+        rgba(92,112,83,.20);
 
 }
 
@@ -723,9 +721,9 @@ h1 {
 
     font-size:
         clamp(
-            1.65rem,
-            4vw,
-            2.45rem
+            1.8rem,
+            4.5vw,
+            2.8rem
         );
 
     line-height:
@@ -747,7 +745,7 @@ h1 {
         sans-serif;
 
     font-size:
-        .48rem;
+        .5rem;
 
     letter-spacing:
         1px;
@@ -789,7 +787,7 @@ h1 {
 .container {
 
     width:
-        min(92%,760px);
+        min(92%, 760px);
 
     margin:
         auto;
@@ -797,20 +795,15 @@ h1 {
     padding-bottom:
         60px;
 
+    position:
+        relative;
+
 }
 
 
 /* =====================================================
    ELEMENTOS BOTÁNICOS LATERALES
 ===================================================== */
-
-.container {
-
-    position:
-        relative;
-
-}
-
 
 .container::before {
 
@@ -821,16 +814,16 @@ h1 {
         fixed;
 
     left:
-        1%;
+        1.5%;
 
     top:
         45%;
 
     font-size:
-        70px;
+        80px;
 
     opacity:
-        .07;
+        .06;
 
     transform:
         rotate(-25deg);
@@ -850,16 +843,16 @@ h1 {
         fixed;
 
     right:
-        1%;
+        1.5%;
 
     top:
         60%;
 
     font-size:
-        70px;
+        80px;
 
     opacity:
-        .07;
+        .06;
 
     transform:
         rotate(25deg);
@@ -883,21 +876,23 @@ h1 {
         center;
 
     margin-bottom:
-        35px;
+        40px;
 
     padding:
-        25px 20px;
+        28px 22px;
 
     background:
-        rgba(243,237,227,.85);
+        rgba(244,239,230,.9);
 
-    border-top:
+    border:
         1px solid
-        rgba(128,102,80,.20);
+        rgba(107,81,61,.18);
 
-    border-bottom:
-        1px solid
-        rgba(128,102,80,.20);
+    border-radius:
+        var(--borde-orgánico);
+
+    box-shadow:
+        var(--sombra-suave);
 
 }
 
@@ -914,10 +909,13 @@ h1 {
         var(--verde-oliva);
 
     font-size:
-        22px;
+        26px;
 
     margin-bottom:
-        5px;
+        8px;
+
+    opacity:
+        .8;
 
 }
 
@@ -929,10 +927,10 @@ h1 {
         sans-serif;
 
     font-size:
-        .62rem;
+        .66rem;
 
     letter-spacing:
-        4px;
+        5px;
 
     text-transform:
         uppercase;
@@ -941,7 +939,10 @@ h1 {
         var(--verde-bosque);
 
     margin-bottom:
-        14px;
+        16px;
+
+    font-weight:
+        500;
 
 }
 
@@ -949,10 +950,13 @@ h1 {
 audio {
 
     width:
-        min(100%,380px);
+        min(100%, 400px);
 
     height:
-        38px;
+        40px;
+
+    border-radius:
+        20px;
 
 }
 
@@ -967,20 +971,23 @@ audio {
         relative;
 
     margin-bottom:
-        30px;
+        35px;
 
     padding:
-        55px 42px;
+        60px 48px;
 
     background:
-        rgba(255,255,255,.94);
+        rgba(255, 255, 255, 0.96);
 
     border:
         1px solid
-        rgba(104,118,91,.18);
+        rgba(92,112,83,.22);
+
+    border-radius:
+        var(--borde-orgánico);
 
     box-shadow:
-        var(--sombra);
+        var(--sombra-media);
 
     overflow:
         hidden;
@@ -991,7 +998,7 @@ audio {
 }
 
 
-/* Fondo botánico interno */
+/* Línea decorativa superior */
 
 .section::before {
 
@@ -1023,10 +1030,13 @@ audio {
             transparent
         );
 
+    border-radius:
+        2px;
+
 }
 
 
-/* Decoración botánica */
+/* Decoración botánica esquinera */
 
 .section::after {
 
@@ -1037,16 +1047,16 @@ audio {
         absolute;
 
     right:
-        -5px;
+        -10px;
 
     bottom:
-        -35px;
+        -40px;
 
     font-size:
-        9rem;
+        10rem;
 
     color:
-        rgba(56,81,61,.055);
+        rgba(47,70,56,.05);
 
     transform:
         rotate(-18deg);
@@ -1060,7 +1070,7 @@ audio {
 .section:hover {
 
     transform:
-        translateY(-4px);
+        translateY(-5px);
 
     box-shadow:
         var(--sombra-hover);
@@ -1081,10 +1091,13 @@ audio {
         var(--verde-oliva);
 
     font-size:
-        1.35rem;
+        1.5rem;
 
     margin-bottom:
-        8px;
+        12px;
+
+    opacity:
+        .8;
 
 }
 
@@ -1099,10 +1112,10 @@ audio {
         var(--verde-bosque);
 
     font-size:
-        .83rem;
+        .9rem;
 
     letter-spacing:
-        4px;
+        5px;
 
     text-transform:
         uppercase;
@@ -1111,7 +1124,54 @@ audio {
         500;
 
     margin-bottom:
-        28px;
+        32px;
+
+    position:
+        relative;
+
+    display:
+        inline-block;
+
+    width:
+        100%;
+
+    text-align:
+        center;
+
+}
+
+
+.section h2::after {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    left:
+        50%;
+
+    bottom:
+        -14px;
+
+    transform:
+        translateX(-50%);
+
+    width:
+        60px;
+
+    height:
+        1px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--cafe-madera),
+            transparent
+        );
 
 }
 
@@ -1123,10 +1183,10 @@ audio {
 .details {
 
     font-size:
-        1.35rem;
+        1.4rem;
 
     line-height:
-        1.65;
+        1.7;
 
     color:
         var(--texto);
@@ -1158,16 +1218,16 @@ audio {
         var(--cafe-madera);
 
     font-size:
-        .76rem;
+        .8rem;
 
     letter-spacing:
-        3px;
+        4px;
 
     font-weight:
         600;
 
     margin-bottom:
-        10px;
+        12px;
 
 }
 
@@ -1175,7 +1235,7 @@ audio {
 .place {
 
     font-size:
-        1.55rem;
+        1.7rem;
 
     font-weight:
         500;
@@ -1192,7 +1252,10 @@ audio {
         var(--texto-suave);
 
     font-size:
-        1.08rem;
+        1.1rem;
+
+    line-height:
+        1.8;
 
 }
 
@@ -1200,13 +1263,13 @@ audio {
 .divider {
 
     width:
-        65px;
+        70px;
 
     height:
         1px;
 
     margin:
-        21px auto;
+        24px auto;
 
     background:
 
@@ -1233,10 +1296,10 @@ audio {
         repeat(2,1fr);
 
     gap:
-        15px;
+        20px;
 
     margin-bottom:
-        32px;
+        35px;
 
 }
 
@@ -1244,18 +1307,25 @@ audio {
 .dress-card {
 
     padding:
-        20px 15px;
+        24px 20px;
 
     background:
+
         linear-gradient(
             145deg,
-            #f5f0e7,
-            #ebe4d8
+            #f8f4ec,
+            #ede6da
         );
 
     border:
         1px solid
-        rgba(128,102,80,.15);
+        rgba(107,81,61,.18);
+
+    border-radius:
+        6px;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,.03);
 
 }
 
@@ -1273,16 +1343,16 @@ audio {
         var(--verde-bosque);
 
     font-size:
-        .68rem;
+        .72rem;
 
     letter-spacing:
-        2px;
+        3px;
 
     text-transform:
         uppercase;
 
     margin-bottom:
-        5px;
+        8px;
 
 }
 
@@ -1290,7 +1360,13 @@ audio {
 .dress-card span {
 
     font-size:
-        1.15rem;
+        1.2rem;
+
+    font-style:
+        italic;
+
+    color:
+        var(--texto);
 
 }
 
@@ -1305,16 +1381,16 @@ audio {
         var(--cafe-madera);
 
     font-size:
-        .68rem;
+        .72rem;
 
     letter-spacing:
-        3px;
+        4px;
 
     text-transform:
         uppercase;
 
     margin-bottom:
-        8px;
+        10px;
 
 }
 
@@ -1342,10 +1418,10 @@ audio {
         center;
 
     gap:
-        25px;
+        30px;
 
     margin-top:
-        20px;
+        25px;
 
 }
 
@@ -1357,10 +1433,10 @@ audio {
         sans-serif;
 
     font-size:
-        .62rem;
+        .64rem;
 
     letter-spacing:
-        1px;
+        1.5px;
 
     text-transform:
         uppercase;
@@ -1374,13 +1450,13 @@ audio {
 .color-circle {
 
     width:
-        46px;
+        50px;
 
     height:
-        46px;
+        50px;
 
     margin:
-        auto auto 8px;
+        auto auto 10px;
 
     border-radius:
         50%;
@@ -1410,7 +1486,7 @@ audio {
 .negro {
 
     background:
-        #252522;
+        #2b2b28;
 
 }
 
@@ -1433,8 +1509,8 @@ audio {
 
         linear-gradient(
             145deg,
-            rgba(255,255,255,.96),
-            rgba(239,235,222,.96)
+            rgba(255,255,255,.98),
+            rgba(240,235,222,.98)
         );
 
 }
@@ -1443,13 +1519,15 @@ audio {
 .gift-icon {
 
     font-size:
-        2.3rem;
+        2.6rem;
 
     color:
         var(--cafe-madera);
 
     margin-bottom:
-        12px;
+        14px;
+
+    text-align: center;
 
 }
 
@@ -1457,7 +1535,7 @@ audio {
 .gift-main {
 
     font-size:
-        1.55rem;
+        1.7rem;
 
     color:
         var(--cafe-oscuro);
@@ -1466,7 +1544,9 @@ audio {
         1.5;
 
     margin-bottom:
-        18px;
+        22px;
+
+    text-align: center;
 
 }
 
@@ -1483,10 +1563,12 @@ audio {
         var(--texto-suave);
 
     font-size:
-        1.13rem;
+        1.15rem;
 
     line-height:
-        1.7;
+        1.8;
+
+    text-align: center;
 
 }
 
@@ -1497,10 +1579,10 @@ audio {
         inline-block;
 
     margin-top:
-        24px;
+        28px;
 
     padding:
-        11px 23px;
+        12px 28px;
 
     border-top:
         1px solid
@@ -1518,13 +1600,24 @@ audio {
         var(--verde-bosque);
 
     font-size:
-        .7rem;
+        .75rem;
 
     letter-spacing:
-        3px;
+        4px;
 
     text-transform:
         uppercase;
+
+    background:
+        rgba(255,255,255,.5);
+
+    border-radius:
+        30px;
+
+    box-shadow:
+        var(--sombra-suave);
+
+    text-align: center;
 
 }
 
@@ -1539,10 +1632,10 @@ audio {
         inline-block;
 
     margin-top:
-        28px;
+        30px;
 
     padding:
-        15px 34px;
+        15px 38px;
 
     background:
         var(--verde-bosque);
@@ -1558,20 +1651,27 @@ audio {
         sans-serif;
 
     font-size:
-        .67rem;
+        .72rem;
 
     letter-spacing:
-        2px;
+        3px;
 
     text-transform:
         uppercase;
+
+    border-radius:
+        30px;
 
     transition:
         .4s ease;
 
     box-shadow:
-        0 8px 22px
-        rgba(56,81,61,.22);
+        0 8px 20px
+        rgba(47,70,56,.25);
+
+    border:
+        1px solid
+        rgba(255,255,255,.1);
 
 }
 
@@ -1583,6 +1683,10 @@ audio {
 
     transform:
         translateY(-3px);
+
+    box-shadow:
+        0 12px 28px
+        rgba(47,70,56,.35);
 
 }
 
@@ -1597,7 +1701,7 @@ footer {
         relative;
 
     padding:
-        35px 20px 55px;
+        40px 20px 60px;
 
     text-align:
         center;
@@ -1617,10 +1721,13 @@ footer::before {
         var(--verde-oliva);
 
     font-size:
-        25px;
+        28px;
 
     margin-bottom:
-        5px;
+        8px;
+
+    opacity:
+        .7;
 
 }
 
@@ -1632,7 +1739,7 @@ footer::before {
         cursive;
 
     font-size:
-        2.7rem;
+        3rem;
 
     color:
         var(--verde-bosque);
@@ -1643,17 +1750,17 @@ footer::before {
 .footer-text {
 
     margin-top:
-        6px;
+        10px;
 
     font-family:
         'Montserrat',
         sans-serif;
 
     font-size:
-        .58rem;
+        .62rem;
 
     letter-spacing:
-        2px;
+        3px;
 
     text-transform:
         uppercase;
@@ -1676,10 +1783,10 @@ footer::before {
     .hero {
 
         height:
-            72vh;
+            78vh;
 
         min-height:
-            500px;
+            520px;
 
         background-attachment:
             scroll;
@@ -1688,10 +1795,10 @@ footer::before {
             center center;
 
         background-size:
-            115%;
+            135%;
 
         padding-bottom:
-            7vh;
+            8vh;
 
     }
 
@@ -1699,7 +1806,7 @@ footer::before {
     .hero-content {
 
         padding:
-            20px 10px;
+            25px 15px;
 
     }
 
@@ -1707,13 +1814,13 @@ footer::before {
     .pre-title {
 
         font-size:
-            .56rem;
+            .6rem;
 
         letter-spacing:
-            4px;
+            5px;
 
         margin-bottom:
-            12px;
+            14px;
 
     }
 
@@ -1722,9 +1829,9 @@ footer::before {
 
         font-size:
             clamp(
-                3.8rem,
-                16vw,
-                5.5rem
+                4rem,
+                18vw,
+                6rem
             );
 
     }
@@ -1733,10 +1840,10 @@ footer::before {
     .hero-date {
 
         font-size:
-            .61rem;
+            .68rem;
 
         letter-spacing:
-            3px;
+            4px;
 
     }
 
@@ -1744,7 +1851,7 @@ footer::before {
     .hero-location {
 
         font-size:
-            .95rem;
+            1rem;
 
     }
 
@@ -1758,7 +1865,7 @@ footer::before {
             10%;
 
         font-size:
-            28px;
+            30px;
 
     }
 
@@ -1769,10 +1876,10 @@ footer::before {
             12px;
 
         top:
-            14%;
+            16%;
 
         font-size:
-            25px;
+            26px;
 
     }
 
@@ -1783,7 +1890,10 @@ footer::before {
             15px;
 
         bottom:
-            15%;
+            18%;
+
+        font-size:
+            24px;
 
     }
 
@@ -1794,7 +1904,10 @@ footer::before {
             15px;
 
         bottom:
-            14%;
+            15%;
+
+        font-size:
+            32px;
 
     }
 
@@ -1807,10 +1920,10 @@ footer::before {
             94%;
 
         margin-top:
-            -28px;
+            -32px;
 
         padding:
-            13px 6px 15px;
+            18px 10px 20px;
 
     }
 
@@ -1818,13 +1931,13 @@ footer::before {
     .countdown-title {
 
         font-size:
-            .44rem;
+            .48rem;
 
         letter-spacing:
-            1.8px;
+            2px;
 
         margin-bottom:
-            8px;
+            10px;
 
     }
 
@@ -1832,10 +1945,10 @@ footer::before {
     .time-box {
 
         padding:
-            2px 3px;
+            2px 4px;
 
         gap:
-            3px;
+            4px;
 
     }
 
@@ -1844,9 +1957,9 @@ footer::before {
 
         font-size:
             clamp(
-                1.3rem,
-                7vw,
-                1.9rem
+                1.4rem,
+                8vw,
+                2rem
             );
 
     }
@@ -1855,10 +1968,10 @@ footer::before {
     .time-label {
 
         font-size:
-            .37rem;
+            .4rem;
 
         letter-spacing:
-            .4px;
+            .5px;
 
     }
 
@@ -1868,7 +1981,7 @@ footer::before {
     .section {
 
         padding:
-            42px 20px;
+            45px 22px;
 
     }
 
@@ -1876,7 +1989,7 @@ footer::before {
     .details {
 
         font-size:
-            1.2rem;
+            1.25rem;
 
     }
 
@@ -1884,7 +1997,7 @@ footer::before {
     .place {
 
         font-size:
-            1.35rem;
+            1.45rem;
 
     }
 
@@ -1910,7 +2023,7 @@ footer::before {
     .colors {
 
         gap:
-            18px;
+            22px;
 
     }
 
@@ -1918,7 +2031,7 @@ footer::before {
     .gift-main {
 
         font-size:
-            1.35rem;
+            1.4rem;
 
     }
 
@@ -1944,7 +2057,7 @@ footer::before {
     h1 {
 
         font-size:
-            3.3rem;
+            3.5rem;
 
     }
 
@@ -1974,7 +2087,7 @@ footer::before {
     .time-number {
 
         font-size:
-            1.22rem;
+            1.3rem;
 
     }
 
@@ -1982,7 +2095,7 @@ footer::before {
     .time-label {
 
         font-size:
-            .34rem;
+            .36rem;
 
     }
 
@@ -1990,7 +2103,7 @@ footer::before {
     .section {
 
         padding:
-            38px 17px;
+            40px 18px;
 
     }
 
