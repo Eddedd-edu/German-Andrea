@@ -424,6 +424,7 @@ h1 {
 
 /* =====================================================
    HOJAS FLOTANTES DEL HERO
+   VARIEDAD TROPICAL PREMIUM
 ===================================================== */
 
 .botanical {
@@ -435,84 +436,166 @@ h1 {
         4;
 
     color:
-        rgba(255,255,255,.65);
+        rgba(255,255,255,.75);
 
     pointer-events:
         none;
 
     text-shadow:
-        0 2px 10px rgba(0,0,0,.4);
+        0 2px 10px rgba(0,0,0,.45);
 
     animation:
         leafFloat 7s ease-in-out infinite;
 
+    filter:
+        drop-shadow(0 3px 8px rgba(0,0,0,.3));
+
 }
 
+
+/* Hoja de monstera grande - esquina superior izquierda */
 
 .botanical-1 {
 
     top:
-        14%;
+        10%;
+
+    left:
+        4%;
+
+    font-size:
+        52px;
+
+    transform:
+        rotate(-18deg);
+
+    opacity:
+        .85;
+
+}
+
+
+/* Hoja de palma - esquina superior derecha */
+
+.botanical-2 {
+
+    top:
+        16%;
+
+    right:
+        5%;
+
+    font-size:
+        42px;
+
+    animation-delay:
+        1.4s;
+
+    transform:
+        rotate(15deg);
+
+    opacity:
+        .8;
+
+}
+
+
+/* Ramita de eucalipto - inferior izquierda */
+
+.botanical-3 {
+
+    bottom:
+        18%;
 
     left:
         6%;
 
     font-size:
-        48px;
-
-    transform:
-        rotate(-25deg);
-
-}
-
-
-.botanical-2 {
-
-    top:
-        22%;
-
-    right:
-        7%;
-
-    font-size:
-        38px;
-
-    animation-delay:
-        1.2s;
-
-}
-
-
-.botanical-3 {
-
-    bottom:
-        22%;
-
-    left:
-        8%;
-
-    font-size:
-        32px;
+        36px;
 
     animation-delay:
         2.8s;
 
+    transform:
+        rotate(-10deg);
+
+    opacity:
+        .75;
+
 }
 
+
+/* Hoja tropical pequeña - inferior derecha */
 
 .botanical-4 {
 
     bottom:
-        18%;
+        15%;
 
     right:
-        9%;
+        6%;
 
     font-size:
-        46px;
+        44px;
 
     animation-delay:
-        4s;
+        4.2s;
+
+    transform:
+        rotate(22deg);
+
+    opacity:
+        .8;
+
+}
+
+
+/* Hoja adicional flotante - centro superior */
+
+.botanical-5 {
+
+    top:
+        6%;
+
+    left:
+        50%;
+
+    font-size:
+        28px;
+
+    animation-delay:
+        2s;
+
+    transform:
+        rotate(5deg);
+
+    opacity:
+        .6;
+
+}
+
+
+/* Hoja pequeña - centro inferior */
+
+.botanical-6 {
+
+    bottom:
+        8%;
+
+    left:
+        45%;
+
+    font-size:
+        24px;
+
+    animation-delay:
+        3.5s;
+
+    transform:
+        rotate(-8deg);
+
+    opacity:
+        .55;
 
 }
 
@@ -531,8 +614,8 @@ h1 {
     50% {
 
         transform:
-            translateY(-15px)
-            rotate(8deg);
+            translateY(-18px)
+            rotate(10deg);
 
     }
 
@@ -582,28 +665,25 @@ h1 {
 .countdown-wrapper::before {
 
     content:
-        "❧";
+        "🌿";
 
     position:
         absolute;
 
     left:
-        -20px;
+        -22px;
 
     top:
-        -20px;
-
-    color:
-        var(--verde-oliva);
+        -22px;
 
     font-size:
-        34px;
+        40px;
 
     transform:
         rotate(-25deg);
 
     opacity:
-        .7;
+        .6;
 
 }
 
@@ -611,28 +691,25 @@ h1 {
 .countdown-wrapper::after {
 
     content:
-        "❧";
+        "🍃";
 
     position:
         absolute;
 
     right:
-        -20px;
+        -22px;
 
     bottom:
-        -20px;
-
-    color:
-        var(--cafe-madera);
+        -22px;
 
     font-size:
-        34px;
+        36px;
 
     transform:
         rotate(155deg);
 
     opacity:
-        .7;
+        .55;
 
 }
 
@@ -841,13 +918,10 @@ h1 {
 .audio-container::before {
 
     content:
-        "❧";
+        "🌿";
 
     display:
         block;
-
-    color:
-        var(--verde-oliva);
 
     font-size:
         26px;
@@ -856,7 +930,7 @@ h1 {
         8px;
 
     opacity:
-        .8;
+        .7;
 
 }
 
@@ -982,28 +1056,59 @@ audio {
 .section::after {
 
     content:
-        "❧";
+        "🌿";
 
     position:
         absolute;
 
     right:
-        -10px;
+        -12px;
 
     bottom:
-        -40px;
+        -38px;
 
     font-size:
-        10rem;
+        8rem;
 
     color:
-        rgba(47,70,56,.05);
+        rgba(47,70,56,.06);
 
     transform:
         rotate(-18deg);
 
     pointer-events:
         none;
+
+    filter:
+        drop-shadow(0 2px 4px rgba(0,0,0,.05));
+
+}
+
+
+/* Hoja adicional en esquina izquierda */
+
+.section .corner-leaf {
+
+    position:
+        absolute;
+
+    left:
+        8px;
+
+    top:
+        8px;
+
+    font-size:
+        1.8rem;
+
+    color:
+        rgba(92,112,83,.08);
+
+    pointer-events:
+        none;
+
+    transform:
+        rotate(-12deg);
 
 }
 
@@ -1672,13 +1777,10 @@ footer {
 footer::before {
 
     content:
-        "❧";
+        "🌿";
 
     display:
         block;
-
-    color:
-        var(--verde-oliva);
 
     font-size:
         28px;
@@ -1687,7 +1789,7 @@ footer::before {
         8px;
 
     opacity:
-        .7;
+        .6;
 
 }
 
@@ -1816,13 +1918,13 @@ footer::before {
     .botanical-1 {
 
         left:
-            12px;
+        8px;
 
         top:
-            10%;
+        8%;
 
         font-size:
-            30px;
+        32px;
 
     }
 
@@ -1830,13 +1932,13 @@ footer::before {
     .botanical-2 {
 
         right:
-            12px;
+        8px;
 
         top:
-            16%;
+        12%;
 
         font-size:
-            26px;
+        28px;
 
     }
 
@@ -1844,13 +1946,13 @@ footer::before {
     .botanical-3 {
 
         left:
-            15px;
+        10px;
 
         bottom:
-            18%;
+        20%;
 
         font-size:
-            24px;
+        24px;
 
     }
 
@@ -1858,13 +1960,41 @@ footer::before {
     .botanical-4 {
 
         right:
-            15px;
+        10px;
 
         bottom:
-            15%;
+        16%;
 
         font-size:
-            32px;
+        30px;
+
+    }
+
+
+    .botanical-5 {
+
+        top:
+        4%;
+
+        left:
+        45%;
+
+        font-size:
+        20px;
+
+    }
+
+
+    .botanical-6 {
+
+        bottom:
+        6%;
+
+        left:
+        42%;
+
+        font-size:
+        18px;
 
     }
 
@@ -2108,26 +2238,19 @@ footer::before {
 <header class="hero">
 
 
-    <!-- Hojas flotantes -->
+    <!-- Hojas tropicales flotantes con variedad -->
 
-    <span class="botanical botanical-1">
-        ❧
-    </span>
+    <span class="botanical botanical-1">🌿</span>
 
+    <span class="botanical botanical-2">🍃</span>
 
-    <span class="botanical botanical-2">
-        ❧
-    </span>
+    <span class="botanical botanical-3">🌱</span>
 
+    <span class="botanical botanical-4">🌿</span>
 
-    <span class="botanical botanical-3">
-        ❧
-    </span>
+    <span class="botanical botanical-5">🍃</span>
 
-
-    <span class="botanical botanical-4">
-        ❧
-    </span>
+    <span class="botanical botanical-6">🌱</span>
 
 
     <!-- TEXTO SOBRE LA FOTO -->
@@ -2319,9 +2442,7 @@ footer::before {
     <section class="section">
 
 
-        <span class="ornament">
-            ❧
-        </span>
+        <span class="ornament">🌿</span>
 
 
         <h2>
@@ -2380,9 +2501,7 @@ footer::before {
     <section class="section">
 
 
-        <span class="ornament">
-            ❧
-        </span>
+        <span class="ornament">🍃</span>
 
 
         <h2>
@@ -2439,9 +2558,7 @@ footer::before {
     <section class="section">
 
 
-        <span class="ornament">
-            ❧
-        </span>
+        <span class="ornament">🌱</span>
 
 
         <h2>
@@ -2552,9 +2669,7 @@ footer::before {
     >
 
 
-        <span class="ornament">
-            ❧
-        </span>
+        <span class="ornament">🌿</span>
 
 
         <h2>
@@ -2636,9 +2751,7 @@ footer::before {
     <section class="section">
 
 
-        <span class="ornament">
-            ❧
-        </span>
+        <span class="ornament">🍃</span>
 
 
         <h2>
