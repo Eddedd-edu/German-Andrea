@@ -2,42 +2,77 @@
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Germán & Andrea | Nuestra Boda</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- =====================================================
+     FUENTES
+===================================================== -->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+>
+
 
 <style>
 
 /* =====================================================
-   PALETA
+   PALETA BOTÁNICA TROPICAL
 ===================================================== */
 
 :root {
-    --verde-bosque: #3f5140;
-    --verde-oliva: #68765b;
-    --verde-salvia: #a6b19a;
 
-    --cafe-oscuro: #4a392d;
-    --cafe-tierra: #806650;
-    --beige: #d8c7b3;
+    --verde-selva: #263d2d;
 
-    --marfil: #fbf8f2;
-    --crema: #f4efe6;
+    --verde-bosque: #38513d;
+
+    --verde-oliva: #66785b;
+
+    --verde-salvia: #a8b69d;
+
+    --verde-claro: #dfe6d8;
+
+    --cafe-oscuro: #49372b;
+
+    --cafe-madera: #735943;
+
+    --cafe-claro: #ad9070;
+
+    --arena: #e5d6c0;
+
+    --marfil: #faf7f0;
+
+    --crema: #f3ede3;
+
     --blanco: #ffffff;
 
-    --texto: #493d34;
-    --texto-suave: #75685d;
+    --texto: #473c33;
 
-    --sombra: 0 15px 45px rgba(63,81,64,.10);
-    --sombra-hover: 0 20px 55px rgba(63,81,64,.17);
+    --texto-suave: #75695e;
 
-    --transicion: all .45s cubic-bezier(.25,.46,.45,.94);
+    --sombra:
+        0 15px 45px rgba(38,61,45,.11);
+
+    --sombra-hover:
+        0 22px 55px rgba(38,61,45,.18);
+
 }
 
 
@@ -46,77 +81,163 @@
 ===================================================== */
 
 * {
+
     margin: 0;
+
     padding: 0;
+
     box-sizing: border-box;
+
 }
+
 
 html {
+
     scroll-behavior: smooth;
+
 }
 
+
 body {
-    font-family: 'Cormorant Garamond', serif;
+
+    font-family:
+        'Cormorant Garamond',
+        serif;
+
+    color:
+        var(--texto);
+
+    line-height:
+        1.6;
+
+    overflow-x:
+        hidden;
+
+    /*
+       Fondo botánico con varias capas
+    */
+
     background:
+
         radial-gradient(
-            circle at top left,
-            rgba(166,177,154,.12),
-            transparent 30%
+            circle at 5% 10%,
+            rgba(168,182,157,.28),
+            transparent 24%
         ),
+
+        radial-gradient(
+            circle at 95% 30%,
+            rgba(115,89,67,.12),
+            transparent 25%
+        ),
+
+        radial-gradient(
+            circle at 20% 75%,
+            rgba(168,182,157,.18),
+            transparent 25%
+        ),
+
         var(--marfil);
 
-    color: var(--texto);
-    line-height: 1.6;
-    overflow-x: hidden;
+}
+
+
+/* =====================================================
+   TEXTURA BOTÁNICA GENERAL
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    opacity: .22;
+
+    background-image:
+
+        radial-gradient(
+            ellipse at 20% 20%,
+            transparent 0,
+            transparent 70%,
+            rgba(56,81,61,.08) 71%,
+            transparent 72%
+        );
+
+    background-size:
+        150px 150px;
+
 }
 
 
 /* =====================================================
    HERO
-   LA FOTO ES LA PROTAGONISTA
+   FOTOGRAFÍA COMO PROTAGONISTA
 ===================================================== */
 
 .hero {
+
     position: relative;
 
     width: 100%;
+
     height: 88vh;
-    min-height: 560px;
+
+    min-height: 570px;
 
     display: flex;
-    align-items: flex-end; /* <-- TEXTO MOVIDO HACIA ABAJO */
+
+    align-items: center;
+
     justify-content: center;
-    padding-bottom: 120px; /* <-- ESPACIO INFERIOR PARA QUE NO CHOQUE CON EL CONTADOR */
 
     text-align: center;
 
-    background-image: url('imagen.jpg');
-
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
-
     overflow: hidden;
+
+    background-image:
+
+        url('imagen.jpeg');
+
+    background-size:
+        cover;
+
+    background-position:
+        center center;
+
+    background-attachment:
+        fixed;
+
 }
 
 
 /*
-   No se coloca una capa oscura sobre toda
-   la fotografía.
+   Solamente un degradado muy suave en la parte inferior.
+   NO oscurece la fotografía.
 */
 
 .hero::after {
+
     content: "";
 
     position: absolute;
 
     left: 0;
+
     right: 0;
+
     bottom: 0;
 
-    height: 110px;
+    height: 125px;
 
     background:
+
         linear-gradient(
             to bottom,
             transparent,
@@ -126,29 +247,23 @@ body {
     z-index: 2;
 
     pointer-events: none;
+
 }
 
 
 /* =====================================================
-   NOMBRES FLOTANDO SOBRE LA FOTO
+   NOMBRES FLOTANTES
 ===================================================== */
 
 .hero-content {
 
     position: relative;
 
-    z-index: 4;
+    z-index: 5;
 
     width: 100%;
 
     padding: 20px;
-
-    /*
-       IMPORTANTE:
-       Sin tarjeta.
-       Sin fondo.
-       Sin borde.
-    */
 
     background: transparent;
 
@@ -156,103 +271,115 @@ body {
 
     box-shadow: none;
 
-    backdrop-filter: none;
-
     animation:
         heroAppear 1.5s ease both;
+
 }
 
 
 @keyframes heroAppear {
 
     from {
+
         opacity: 0;
-        transform: translateY(20px);
+
+        transform:
+            translateY(25px);
+
     }
 
     to {
+
         opacity: 1;
-        transform: translateY(0);
+
+        transform:
+            translateY(0);
+
     }
 
 }
 
 
-/* =====================================================
-   TEXTO SUPERIOR
-===================================================== */
-
 .pre-title {
 
-    font-family: 'Montserrat', sans-serif;
+    font-family:
+        'Montserrat',
+        sans-serif;
 
-    font-size: .72rem;
+    font-size:
+        .68rem;
 
-    letter-spacing: 7px;
+    letter-spacing:
+        7px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    color: white;
+    color:
+        white;
 
-    margin-bottom: 15px;
-
-    font-weight: 400;
+    margin-bottom:
+        15px;
 
     text-shadow:
         0 2px 12px rgba(0,0,0,.65);
+
 }
 
-
-/* =====================================================
-   NOMBRES
-===================================================== */
 
 h1 {
 
-    font-family: 'Great Vibes', cursive;
+    font-family:
+        'Great Vibes',
+        cursive;
 
     font-size:
-        clamp(4.5rem, 11vw, 8rem);
+        clamp(
+            4.5rem,
+            11vw,
+            8rem
+        );
 
-    font-weight: 400;
+    font-weight:
+        400;
 
-    line-height: .95;
+    line-height:
+        .95;
 
-    color: white;
+    color:
+        white;
 
-    margin: 0;
-
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
     text-shadow:
+
         0 3px 5px rgba(0,0,0,.65),
+
         0 8px 25px rgba(0,0,0,.45);
+
 }
 
 
-/* =====================================================
-   SEPARADOR
-===================================================== */
-
 .hero-line {
 
-    width: 85px;
+    width:
+        90px;
 
-    height: 1px;
+    height:
+        1px;
 
-    margin: 22px auto;
+    margin:
+        22px auto;
 
     background:
         rgba(255,255,255,.9);
 
     box-shadow:
-        0 1px 8px rgba(0,0,0,.4);
+        0 1px 8px rgba(0,0,0,.5);
+
 }
 
-
-/* =====================================================
-   FECHA
-===================================================== */
 
 .hero-date {
 
@@ -260,99 +387,156 @@ h1 {
         'Montserrat',
         sans-serif;
 
-    font-size: .8rem;
+    font-size:
+        .78rem;
 
-    letter-spacing: 5px;
+    letter-spacing:
+        5px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    color: white;
+    color:
+        white;
 
     text-shadow:
         0 2px 10px rgba(0,0,0,.7);
+
 }
 
 
 .hero-location {
 
-    margin-top: 8px;
+    margin-top:
+        8px;
 
-    font-size: 1.1rem;
+    font-size:
+        1.1rem;
 
-    font-style: italic;
+    font-style:
+        italic;
 
-    color: white;
+    color:
+        white;
 
     text-shadow:
         0 2px 10px rgba(0,0,0,.7);
+
 }
 
 
 /* =====================================================
-   HOJAS FLOTANTES
+   HOJAS FLOTANTES DEL HERO
 ===================================================== */
 
-.floating-leaf {
+.botanical {
 
-    position: absolute;
+    position:
+        absolute;
 
-    z-index: 3;
+    z-index:
+        4;
 
     color:
-        rgba(255,255,255,.75);
+        rgba(255,255,255,.72);
 
-    font-size: 30px;
-
-    pointer-events: none;
+    pointer-events:
+        none;
 
     text-shadow:
-        0 2px 8px rgba(0,0,0,.4);
+        0 2px 10px rgba(0,0,0,.35);
 
     animation:
-        floating 6s ease-in-out infinite;
+        leafFloat 7s ease-in-out infinite;
+
 }
 
 
-.leaf-1 {
-    top: 14%;
-    left: 7%;
+.botanical-1 {
+
+    top:
+        12%;
+
+    left:
+        5%;
+
+    font-size:
+        42px;
+
+    transform:
+        rotate(-25deg);
+
 }
 
 
-.leaf-2 {
-    top: 18%;
-    right: 8%;
-    animation-delay: 1.5s;
+.botanical-2 {
+
+    top:
+        20%;
+
+    right:
+        6%;
+
+    font-size:
+        32px;
+
+    animation-delay:
+        1.5s;
+
 }
 
 
-.leaf-3 {
-    bottom: 20%;
-    left: 8%;
-    animation-delay: 3s;
+.botanical-3 {
+
+    bottom:
+        19%;
+
+    left:
+        7%;
+
+    font-size:
+        28px;
+
+    animation-delay:
+        3s;
+
 }
 
 
-.leaf-4 {
-    bottom: 18%;
-    right: 8%;
-    animation-delay: 4.5s;
+.botanical-4 {
+
+    bottom:
+        16%;
+
+    right:
+        7%;
+
+    font-size:
+        40px;
+
+    animation-delay:
+        4.5s;
+
 }
 
 
-@keyframes floating {
+@keyframes leafFloat {
 
     0%,
     100% {
+
         transform:
             translateY(0)
             rotate(0deg);
+
     }
 
     50% {
+
         transform:
-            translateY(-10px)
-            rotate(5deg);
+            translateY(-12px)
+            rotate(7deg);
+
     }
 
 }
@@ -364,15 +548,17 @@ h1 {
 
 .countdown-wrapper {
 
-    position: relative;
+    position:
+        relative;
 
-    z-index: 5;
+    z-index:
+        10;
 
     width:
-        min(92%, 720px);
+        min(92%,720px);
 
     margin:
-        -35px auto 45px;
+        -38px auto 50px;
 
     padding:
         15px 20px 17px;
@@ -382,13 +568,63 @@ h1 {
 
     border:
         1px solid
-        rgba(104,118,91,.25);
+        rgba(56,81,61,.22);
 
     box-shadow:
-        0 12px 35px
-        rgba(63,81,64,.11);
+        var(--sombra);
 
-    text-align: center;
+}
+
+
+.countdown-wrapper::before {
+
+    content:
+        "❧";
+
+    position:
+        absolute;
+
+    left:
+        -18px;
+
+    top:
+        -18px;
+
+    color:
+        var(--verde-oliva);
+
+    font-size:
+        30px;
+
+    transform:
+        rotate(-25deg);
+
+}
+
+
+.countdown-wrapper::after {
+
+    content:
+        "❧";
+
+    position:
+        absolute;
+
+    right:
+        -18px;
+
+    bottom:
+        -18px;
+
+    color:
+        var(--cafe-madera);
+
+    font-size:
+        30px;
+
+    transform:
+        rotate(155deg);
+
 }
 
 
@@ -401,39 +637,57 @@ h1 {
     color:
         var(--verde-bosque);
 
-    font-size: .53rem;
+    font-size:
+        .52rem;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 10px;
+    text-align:
+        center;
+
+    margin-bottom:
+        10px;
+
 }
 
 
 .countdown {
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: center;
+    align-items:
+        center;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    width: 100%;
+    width:
+        100%;
+
 }
 
 
 .time-box {
 
-    flex: 1;
+    flex:
+        1;
 
-    display: flex;
+    display:
+        flex;
 
-    align-items: baseline;
+    align-items:
+        baseline;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 5px;
+    gap:
+        5px;
 
     padding:
         2px 10px;
@@ -441,11 +695,15 @@ h1 {
     border-right:
         1px solid
         rgba(104,118,91,.20);
+
 }
 
 
 .time-box:last-child {
-    border-right: none;
+
+    border-right:
+        none;
+
 }
 
 
@@ -456,14 +714,21 @@ h1 {
         serif;
 
     font-size:
-        clamp(1.65rem,4vw,2.45rem);
+        clamp(
+            1.65rem,
+            4vw,
+            2.45rem
+        );
 
-    line-height: 1;
+    line-height:
+        1;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
     color:
         var(--cafe-oscuro);
+
 }
 
 
@@ -473,29 +738,39 @@ h1 {
         'Montserrat',
         sans-serif;
 
-    font-size: .48rem;
+    font-size:
+        .48rem;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     color:
         var(--verde-oliva);
+
 }
 
 
 #countdown-message {
 
-    display: none;
+    display:
+        none;
+
+    text-align:
+        center;
 
     font-family:
         'Great Vibes',
         cursive;
 
-    font-size: 2rem;
+    font-size:
+        2rem;
 
     color:
         var(--verde-bosque);
+
 }
 
 
@@ -508,9 +783,82 @@ h1 {
     width:
         min(92%,760px);
 
-    margin: auto;
+    margin:
+        auto;
 
-    padding-bottom: 60px;
+    padding-bottom:
+        60px;
+
+}
+
+
+/* =====================================================
+   ELEMENTOS BOTÁNICOS LATERALES
+===================================================== */
+
+.container {
+
+    position:
+        relative;
+
+}
+
+
+.container::before {
+
+    content:
+        "🌿";
+
+    position:
+        fixed;
+
+    left:
+        1%;
+
+    top:
+        45%;
+
+    font-size:
+        70px;
+
+    opacity:
+        .07;
+
+    transform:
+        rotate(-25deg);
+
+    pointer-events:
+        none;
+
+}
+
+
+.container::after {
+
+    content:
+        "🌿";
+
+    position:
+        fixed;
+
+    right:
+        1%;
+
+    top:
+        60%;
+
+    font-size:
+        70px;
+
+    opacity:
+        .07;
+
+    transform:
+        rotate(25deg);
+
+    pointer-events:
+        none;
+
 }
 
 
@@ -520,23 +868,49 @@ h1 {
 
 .audio-container {
 
-    text-align: center;
+    position:
+        relative;
 
-    margin-bottom: 35px;
+    text-align:
+        center;
+
+    margin-bottom:
+        35px;
 
     padding:
-        23px 20px;
+        25px 20px;
 
     background:
-        var(--crema);
+        rgba(243,237,227,.85);
 
     border-top:
         1px solid
-        rgba(128,102,80,.18);
+        rgba(128,102,80,.20);
 
     border-bottom:
         1px solid
-        rgba(128,102,80,.18);
+        rgba(128,102,80,.20);
+
+}
+
+
+.audio-container::before {
+
+    content:
+        "❧";
+
+    display:
+        block;
+
+    color:
+        var(--verde-oliva);
+
+    font-size:
+        22px;
+
+    margin-bottom:
+        5px;
+
 }
 
 
@@ -546,16 +920,21 @@ h1 {
         'Montserrat',
         sans-serif;
 
-    font-size: .62rem;
+    font-size:
+        .62rem;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     color:
         var(--verde-bosque);
 
-    margin-bottom: 14px;
+    margin-bottom:
+        14px;
+
 }
 
 
@@ -564,37 +943,109 @@ audio {
     width:
         min(100%,380px);
 
-    height: 38px;
+    height:
+        38px;
+
 }
 
 
 /* =====================================================
-   SECCIONES
+   TARJETAS
 ===================================================== */
 
 .section {
 
-    position: relative;
+    position:
+        relative;
 
-    margin-bottom: 28px;
+    margin-bottom:
+        30px;
 
     padding:
-        52px 42px;
+        55px 42px;
 
     background:
-        var(--blanco);
+        rgba(255,255,255,.94);
 
     border:
         1px solid
-        rgba(104,118,91,.16);
+        rgba(104,118,91,.18);
 
     box-shadow:
         var(--sombra);
 
-    overflow: hidden;
+    overflow:
+        hidden;
 
     transition:
-        var(--transicion);
+        .45s ease;
+
+}
+
+
+/* Fondo botánico interno */
+
+.section::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        15%;
+
+    right:
+        15%;
+
+    height:
+        2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--verde-oliva),
+            var(--cafe-madera),
+            transparent
+        );
+
+}
+
+
+/* Decoración botánica */
+
+.section::after {
+
+    content:
+        "❧";
+
+    position:
+        absolute;
+
+    right:
+        -5px;
+
+    bottom:
+        -35px;
+
+    font-size:
+        9rem;
+
+    color:
+        rgba(56,81,61,.055);
+
+    transform:
+        rotate(-18deg);
+
+    pointer-events:
+        none;
+
 }
 
 
@@ -605,53 +1056,7 @@ audio {
 
     box-shadow:
         var(--sombra-hover);
-}
 
-
-.section::before {
-
-    content: "";
-
-    position: absolute;
-
-    top: 0;
-
-    left: 18%;
-    right: 18%;
-
-    height: 2px;
-
-    background:
-
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--verde-oliva),
-            var(--cafe-tierra),
-            transparent
-        );
-}
-
-
-.section::after {
-
-    content: "❧";
-
-    position: absolute;
-
-    right: 20px;
-
-    bottom: -28px;
-
-    font-size: 8rem;
-
-    color:
-        rgba(104,118,91,.045);
-
-    transform:
-        rotate(-12deg);
-
-    pointer-events: none;
 }
 
 
@@ -661,14 +1066,18 @@ audio {
 
 .ornament {
 
-    display: block;
+    display:
+        block;
 
     color:
         var(--verde-oliva);
 
-    font-size: 1.35rem;
+    font-size:
+        1.35rem;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
+
 }
 
 
@@ -681,15 +1090,21 @@ audio {
     color:
         var(--verde-bosque);
 
-    font-size: .83rem;
+    font-size:
+        .83rem;
 
-    letter-spacing: 4px;
+    letter-spacing:
+        4px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    font-weight: 500;
+    font-weight:
+        500;
 
-    margin-bottom: 28px;
+    margin-bottom:
+        28px;
+
 }
 
 
@@ -707,41 +1122,59 @@ audio {
 
     color:
         var(--texto);
+
+    text-align:
+        center;
+
 }
 
 
 .details p {
-    margin: 6px 0;
+
+    margin:
+        6px 0;
+
 }
 
 
 .time {
 
-    display: block;
+    display:
+        block;
 
     font-family:
         'Montserrat',
         sans-serif;
 
     color:
-        var(--cafe-tierra);
+        var(--cafe-madera);
 
-    font-size: .76rem;
+    font-size:
+        .76rem;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    font-weight: 600;
+    font-weight:
+        600;
 
-    margin-bottom: 10px;
+    margin-bottom:
+        10px;
+
 }
 
 
 .place {
 
     font-size:
-        1.5rem;
+        1.55rem;
 
-    font-weight: 500;
+    font-weight:
+        500;
+
+    color:
+        var(--verde-selva);
+
 }
 
 
@@ -752,14 +1185,17 @@ audio {
 
     font-size:
         1.08rem;
+
 }
 
 
 .divider {
 
-    width: 65px;
+    width:
+        65px;
 
-    height: 1px;
+    height:
+        1px;
 
     margin:
         21px auto;
@@ -772,6 +1208,7 @@ audio {
             var(--verde-oliva),
             transparent
         );
+
 }
 
 
@@ -781,33 +1218,44 @@ audio {
 
 .dress-row {
 
-    display: grid;
+    display:
+        grid;
 
     grid-template-columns:
         repeat(2,1fr);
 
-    gap: 15px;
+    gap:
+        15px;
 
-    margin-bottom: 32px;
+    margin-bottom:
+        32px;
+
 }
 
 
 .dress-card {
 
-    padding: 18px;
+    padding:
+        20px 15px;
 
     background:
-        var(--crema);
+        linear-gradient(
+            145deg,
+            #f5f0e7,
+            #ebe4d8
+        );
 
     border:
         1px solid
         rgba(128,102,80,.15);
+
 }
 
 
 .dress-card strong {
 
-    display: block;
+    display:
+        block;
 
     font-family:
         'Montserrat',
@@ -816,18 +1264,26 @@ audio {
     color:
         var(--verde-bosque);
 
-    font-size: .68rem;
+    font-size:
+        .68rem;
 
-    letter-spacing: 2px;
+    letter-spacing:
+        2px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 5px;
+    margin-bottom:
+        5px;
+
 }
 
 
 .dress-card span {
-    font-size: 1.15rem;
+
+    font-size:
+        1.15rem;
+
 }
 
 
@@ -838,15 +1294,20 @@ audio {
         sans-serif;
 
     color:
-        var(--cafe-tierra);
+        var(--cafe-madera);
 
-    font-size: .68rem;
+    font-size:
+        .68rem;
 
-    letter-spacing: 3px;
+    letter-spacing:
+        3px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
-    margin-bottom: 8px;
+    margin-bottom:
+        8px;
+
 }
 
 
@@ -855,21 +1316,29 @@ audio {
     color:
         var(--texto-suave);
 
-    font-size: 1rem;
+    font-size:
+        1rem;
 
-    font-style: italic;
+    font-style:
+        italic;
+
 }
 
 
 .colors {
 
-    display: flex;
+    display:
+        flex;
 
-    justify-content: center;
+    justify-content:
+        center;
 
-    gap: 25px;
+    gap:
+        25px;
 
-    margin-top: 20px;
+    margin-top:
+        20px;
+
 }
 
 
@@ -879,27 +1348,34 @@ audio {
         'Montserrat',
         sans-serif;
 
-    font-size: .62rem;
+    font-size:
+        .62rem;
 
-    letter-spacing: 1px;
+    letter-spacing:
+        1px;
 
-    text-transform: uppercase;
+    text-transform:
+        uppercase;
 
     color:
         var(--texto-suave);
+
 }
 
 
 .color-circle {
 
-    width: 46px;
+    width:
+        46px;
 
-    height: 46px;
+    height:
+        46px;
 
     margin:
         auto auto 8px;
 
-    border-radius: 50%;
+    border-radius:
+        50%;
 
     border:
         3px solid white;
@@ -911,21 +1387,31 @@ audio {
     box-shadow:
         0 5px 15px
         rgba(0,0,0,.12);
+
 }
 
 
 .verde {
-    background: #65755b;
+
+    background:
+        #65755b;
+
 }
 
 
 .negro {
-    background: #252522;
+
+    background:
+        #252522;
+
 }
 
 
 .blanco {
-    background: #f7f5ef;
+
+    background:
+        #f7f5ef;
+
 }
 
 
@@ -939,20 +1425,24 @@ audio {
 
         linear-gradient(
             145deg,
-            #ffffff,
-            #f6f2e9
+            rgba(255,255,255,.96),
+            rgba(239,235,222,.96)
         );
+
 }
 
 
 .gift-icon {
 
-    font-size: 2rem;
+    font-size:
+        2.3rem;
 
     color:
-        var(--cafe-tierra);
+        var(--cafe-madera);
 
-    margin-bottom: 12px;
+    margin-bottom:
+        12px;
+
 }
 
 
@@ -969,6 +1459,7 @@ audio {
 
     margin-bottom:
         18px;
+
 }
 
 
@@ -988,6 +1479,7 @@ audio {
 
     line-height:
         1.7;
+
 }
 
 
@@ -1004,11 +1496,11 @@ audio {
 
     border-top:
         1px solid
-        var(--beige);
+        var(--cafe-claro);
 
     border-bottom:
         1px solid
-        var(--beige);
+        var(--cafe-claro);
 
     font-family:
         'Montserrat',
@@ -1025,6 +1517,7 @@ audio {
 
     text-transform:
         uppercase;
+
 }
 
 
@@ -1041,7 +1534,7 @@ audio {
         28px;
 
     padding:
-        15px 32px;
+        15px 34px;
 
     background:
         var(--verde-bosque);
@@ -1066,11 +1559,12 @@ audio {
         uppercase;
 
     transition:
-        var(--transicion);
+        .4s ease;
 
     box-shadow:
-        0 7px 20px
-        rgba(63,81,64,.22);
+        0 8px 22px
+        rgba(56,81,61,.22);
+
 }
 
 
@@ -1081,6 +1575,7 @@ audio {
 
     transform:
         translateY(-3px);
+
 }
 
 
@@ -1090,11 +1585,35 @@ audio {
 
 footer {
 
+    position:
+        relative;
+
     padding:
-        30px 20px 50px;
+        35px 20px 55px;
 
     text-align:
         center;
+
+}
+
+
+footer::before {
+
+    content:
+        "❧";
+
+    display:
+        block;
+
+    color:
+        var(--verde-oliva);
+
+    font-size:
+        25px;
+
+    margin-bottom:
+        5px;
+
 }
 
 
@@ -1105,10 +1624,11 @@ footer {
         cursive;
 
     font-size:
-        2.5rem;
+        2.7rem;
 
     color:
         var(--verde-bosque);
+
 }
 
 
@@ -1132,6 +1652,7 @@ footer {
 
     color:
         var(--texto-suave);
+
 }
 
 
@@ -1141,6 +1662,8 @@ footer {
 
 @media(max-width:700px) {
 
+
+    /* HERO */
 
     .hero {
 
@@ -1155,6 +1678,7 @@ footer {
 
         background-position:
             center center;
+
     }
 
 
@@ -1162,19 +1686,21 @@ footer {
 
         padding:
             20px 10px;
+
     }
 
 
     .pre-title {
 
         font-size:
-            .57rem;
+            .56rem;
 
         letter-spacing:
             4px;
 
         margin-bottom:
             12px;
+
     }
 
 
@@ -1186,16 +1712,18 @@ footer {
                 16vw,
                 5.5rem
             );
+
     }
 
 
     .hero-date {
 
         font-size:
-            .62rem;
+            .61rem;
 
         letter-spacing:
             3px;
+
     }
 
 
@@ -1203,37 +1731,57 @@ footer {
 
         font-size:
             .95rem;
+
     }
 
 
-    .floating-leaf {
+    .botanical-1 {
+
+        left:
+            12px;
+
+        top:
+            10%;
 
         font-size:
-            23px;
+            28px;
+
     }
 
 
-    .leaf-1 {
-        left: 20px;
-        top: 12%;
+    .botanical-2 {
+
+        right:
+            12px;
+
+        top:
+            14%;
+
+        font-size:
+            25px;
+
     }
 
 
-    .leaf-2 {
-        right: 20px;
-        top: 15%;
+    .botanical-3 {
+
+        left:
+            15px;
+
+        bottom:
+            15%;
+
     }
 
 
-    .leaf-3 {
-        left: 20px;
-        bottom: 17%;
-    }
+    .botanical-4 {
 
+        right:
+            15px;
 
-    .leaf-4 {
-        right: 20px;
-        bottom: 15%;
+        bottom:
+            14%;
+
     }
 
 
@@ -1248,20 +1796,22 @@ footer {
             -28px;
 
         padding:
-            13px 7px 15px;
+            13px 6px 15px;
+
     }
 
 
     .countdown-title {
 
         font-size:
-            .45rem;
+            .44rem;
 
         letter-spacing:
-            2px;
+            1.8px;
 
         margin-bottom:
             8px;
+
     }
 
 
@@ -1272,6 +1822,7 @@ footer {
 
         gap:
             3px;
+
     }
 
 
@@ -1279,27 +1830,32 @@ footer {
 
         font-size:
             clamp(
-                1.35rem,
+                1.3rem,
                 7vw,
                 1.9rem
             );
+
     }
 
 
     .time-label {
 
         font-size:
-            .39rem;
+            .37rem;
 
         letter-spacing:
-            .5px;
+            .4px;
+
     }
 
+
+    /* TARJETAS */
 
     .section {
 
         padding:
             42px 20px;
+
     }
 
 
@@ -1307,6 +1863,7 @@ footer {
 
         font-size:
             1.2rem;
+
     }
 
 
@@ -1314,13 +1871,25 @@ footer {
 
         font-size:
             1.35rem;
+
     }
 
+
+    .address {
+
+        font-size:
+            1rem;
+
+    }
+
+
+    /* VESTIMENTA */
 
     .dress-row {
 
         grid-template-columns:
             1fr;
+
     }
 
 
@@ -1328,13 +1897,23 @@ footer {
 
         gap:
             18px;
+
     }
+
+
+    .gift-main {
+
+        font-size:
+            1.35rem;
+
+    }
+
 
 }
 
 
 /* =====================================================
-   TELÉFONOS PEQUEÑOS
+   TELÉFONOS MUY PEQUEÑOS
 ===================================================== */
 
 @media(max-width:380px) {
@@ -1344,13 +1923,15 @@ footer {
 
         height:
             520px;
+
     }
 
 
     h1 {
 
         font-size:
-            3.35rem;
+            3.3rem;
+
     }
 
 
@@ -1361,6 +1942,7 @@ footer {
 
         padding-right:
             3px;
+
     }
 
 
@@ -1371,20 +1953,23 @@ footer {
 
         gap:
             2px;
+
     }
 
 
     .time-number {
 
         font-size:
-            1.25rem;
+            1.22rem;
+
     }
 
 
     .time-label {
 
         font-size:
-            .35rem;
+            .34rem;
+
     }
 
 
@@ -1392,6 +1977,7 @@ footer {
 
         padding:
             38px 17px;
+
     }
 
 }
@@ -1418,50 +2004,64 @@ footer {
 
         scroll-behavior:
             auto !important;
+
     }
 
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <header class="hero">
 
 
-    <span class="floating-leaf leaf-1">
+    <!-- Hojas flotantes -->
+
+    <span class="botanical botanical-1">
         ❧
     </span>
 
 
-    <span class="floating-leaf leaf-2">
-        ❧
-        </span>
-
-
-    <span class="floating-leaf leaf-3">
+    <span class="botanical botanical-2">
         ❧
     </span>
 
 
-    <span class="floating-leaf leaf-4">
+    <span class="botanical botanical-3">
         ❧
     </span>
 
 
-        <div class="hero-content">
+    <span class="botanical botanical-4">
+        ❧
+    </span>
+
+
+    <!-- TEXTO SOBRE LA FOTO -->
+
+    <div class="hero-content">
 
 
         <div class="pre-title">
+
             Nuestra boda
+
         </div>
 
 
         <h1>
+
             Germán & Andrea
+
         </h1>
 
 
@@ -1469,12 +2069,16 @@ footer {
 
 
         <div class="hero-date">
+
             5 de diciembre · 2026
+
         </div>
 
 
         <div class="hero-location">
+
             Ibagué · Tolima
+
         </div>
 
 
@@ -1484,6 +2088,10 @@ footer {
 </header>
 
 
+
+<!-- =====================================================
+     CONTADOR
+===================================================== -->
 
 <section class="countdown-wrapper">
 
@@ -1579,10 +2187,18 @@ footer {
 
 
 
+<!-- =====================================================
+     CONTENIDO
+===================================================== -->
+
 <main class="container">
 
 
-        <section class="audio-container">
+    <!-- =================================================
+         MÚSICA
+    ================================================== -->
+
+    <section class="audio-container">
 
 
         <div class="audio-label">
@@ -1612,7 +2228,11 @@ footer {
 
 
 
-        <section class="section">
+    <!-- =================================================
+         CEREMONIA
+    ================================================== -->
+
+    <section class="section">
 
 
         <span class="ornament">
@@ -1629,13 +2249,16 @@ footer {
 
 
             <span class="time">
+
                 4:00 P. M.
+
             </span>
 
 
             <p class="place">
-                Parroquia Santa Cruz
-                de Jerusalén
+
+                Parroquia Santa Cruz Jerusalén
+
             </p>
 
 
@@ -1644,9 +2267,17 @@ footer {
 
             <p class="address">
 
-                Ibagué, Tolima
+                Ibagué · Tolima
+
+                <br><br>
+
+                Avenida Santa Cruz,
+                calle 99,
+                Cra. 13 Sur
+
                 <br>
-                Mirador turístico Bellavista
+
+                Hacienda Santa Cruz
 
             </p>
 
@@ -1658,7 +2289,11 @@ footer {
 
 
 
-        <section class="section">
+    <!-- =================================================
+         RECEPCIÓN
+    ================================================== -->
+
+    <section class="section">
 
 
         <span class="ornament">
@@ -1675,12 +2310,16 @@ footer {
 
 
             <span class="time">
+
                 7:00 P. M.
+
             </span>
 
 
             <p class="place">
-                Hacienda Santa Cruz
+
+                Mirador Turístico Bellavista
+
             </p>
 
 
@@ -1689,9 +2328,15 @@ footer {
 
             <p class="address">
 
-                Av. Santa Cruz,
-                Calle 99,
-                Cra. 13 Sur
+                Salado
+
+                <br>
+
+                Ibagué · Tolima
+
+                <br><br>
+
+                KM 2 Vía Vereda Chembe
 
             </p>
 
@@ -1703,7 +2348,11 @@ footer {
 
 
 
-        <section class="section">
+    <!-- =================================================
+         CÓDIGO DE VESTIMENTA
+    ================================================== -->
+
+    <section class="section">
 
 
         <span class="ornament">
@@ -1712,7 +2361,9 @@ footer {
 
 
         <h2>
+
             Código de vestimenta
+
         </h2>
 
 
@@ -1739,7 +2390,7 @@ footer {
                 </strong>
 
                 <span>
-                    Traje formal
+                    Traje formal / Camisa Guayabera
                 </span>
 
             </div>
@@ -1750,15 +2401,17 @@ footer {
 
         <div class="reserved-title">
 
-            Tonos reservados para los novios
+            Tonos reservados
 
         </div>
 
 
         <p class="color-note">
 
-            Les agradecemos evitar estos tonos
-            para acompañarnos en nuestra celebración.
+            Agradecemos evitar estos tonos
+            para que los protagonistas
+            de la celebración conserven
+            su paleta especial.
 
         </p>
 
@@ -1768,7 +2421,9 @@ footer {
 
             <div class="color-item">
 
-                <div class="color-circle verde"></div>
+                <div
+                    class="color-circle verde"
+                ></div>
 
                 Verde
 
@@ -1777,7 +2432,9 @@ footer {
 
             <div class="color-item">
 
-                <div class="color-circle negro"></div>
+                <div
+                    class="color-circle negro"
+                ></div>
 
                 Negro
 
@@ -1786,7 +2443,9 @@ footer {
 
             <div class="color-item">
 
-                <div class="color-circle blanco"></div>
+                <div
+                    class="color-circle blanco"
+                ></div>
 
                 Blanco
 
@@ -1800,7 +2459,13 @@ footer {
 
 
 
-        <section class="section gift-section">
+    <!-- =================================================
+         MESA DE REGALOS
+    ================================================== -->
+
+    <section
+        class="section gift-section"
+    >
 
 
         <span class="ornament">
@@ -1809,7 +2474,9 @@ footer {
 
 
         <h2>
+
             Mesa de regalos
+
         </h2>
 
 
@@ -1817,32 +2484,36 @@ footer {
 
 
             <div class="gift-icon">
+
                 ♡
+
             </div>
 
 
             <p class="gift-main">
 
-                Lo más importante para nosotros
-                es compartir este día contigo.
+                Tu presencia es nuestro
+                regalo más especial.
 
             </p>
 
 
             <p class="gift-text">
 
-                Tu presencia, tu cariño y la alegría
-                de acompañarnos en este momento
-                tan especial serán, sin duda,
-                nuestro mejor regalo.
+                Queremos que este día sea
+                un encuentro para celebrar,
+                compartir y crear recuerdos
+                junto a las personas que
+                hacen parte de nuestra historia.
 
                 <br><br>
 
-                Si deseas tener un detalle con nosotros,
-                hemos elegido una forma sencilla
-                de convertir ese gesto en nuevos
-                sueños, experiencias y recuerdos
-                que construiremos juntos.
+                Si además deseas tener
+                un detalle con nosotros,
+                agradecemos de corazón
+                cualquier gesto que quieras
+                regalarnos para acompañarnos
+                en el comienzo de esta nueva etapa.
 
             </p>
 
@@ -1859,10 +2530,10 @@ footer {
                 style="margin-top:20px;"
             >
 
-                Gracias por ser parte de nuestra historia
-                y por acompañarnos a comenzar este
-                nuevo capítulo rodeados de las personas
-                que queremos.
+                Gracias por acompañarnos,
+                por celebrar nuestro amor
+                y por ser parte de este
+                nuevo capítulo de nuestra vida.
 
             </p>
 
@@ -1874,7 +2545,11 @@ footer {
 
 
 
-        <section class="section">
+    <!-- =================================================
+         ASISTENCIA
+    ================================================== -->
+
+    <section class="section">
 
 
         <span class="ornament">
@@ -1883,7 +2558,9 @@ footer {
 
 
         <h2>
+
             Asistencia
+
         </h2>
 
 
@@ -1891,7 +2568,9 @@ footer {
 
 
             <p class="place">
+
                 Queremos celebrar contigo
+
             </p>
 
 
@@ -1900,12 +2579,14 @@ footer {
 
             <p class="address">
 
-                Nos haría muy felices compartir
-                este día tan especial contigo.
+                Nos haría muy felices
+                compartir este día
+                tan especial contigo.
 
                 <br><br>
 
-                Por favor, confírmanos tu compañía.
+                Por favor, confírmanos
+                tu compañía.
 
             </p>
 
@@ -1932,6 +2613,10 @@ footer {
 
 
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
 
@@ -1952,6 +2637,10 @@ footer {
 </footer>
 
 
+
+<!-- =====================================================
+     CONTADOR
+===================================================== -->
 
 <script>
 
@@ -1991,7 +2680,7 @@ function updateCountdown() {
 
 
     /*
-    Cuando llega el momento
+       CUANDO LLEGUE EL MOMENTO
     */
 
     if (difference <= 0) {
@@ -1999,12 +2688,14 @@ function updateCountdown() {
 
         document
             .getElementById("countdown")
-            .style.display = "none";
+            .style.display =
+                "none";
 
 
         document
             .getElementById("countdown-message")
-            .style.display = "block";
+            .style.display =
+                "block";
 
 
         return;
@@ -2014,7 +2705,7 @@ function updateCountdown() {
 
 
     /*
-    DÍAS
+       DÍAS
     */
 
     const days =
@@ -2031,7 +2722,7 @@ function updateCountdown() {
 
 
     /*
-    HORAS
+       HORAS
     */
 
     const hours =
@@ -2055,7 +2746,7 @@ function updateCountdown() {
 
 
     /*
-    MINUTOS
+       MINUTOS
     */
 
     const minutes =
@@ -2077,7 +2768,7 @@ function updateCountdown() {
 
 
     /*
-    SEGUNDOS
+       SEGUNDOS
     */
 
     const seconds =
@@ -2095,7 +2786,7 @@ function updateCountdown() {
 
 
     /*
-    MOSTRAR DÍAS
+       MOSTRAR
     */
 
     document
@@ -2105,11 +2796,6 @@ function updateCountdown() {
             .padStart(2,"0");
 
 
-
-    /*
-    MOSTRAR HORAS
-    */
-
     document
         .getElementById("hours")
         .textContent =
@@ -2117,22 +2803,12 @@ function updateCountdown() {
             .padStart(2,"0");
 
 
-
-    /*
-    MOSTRAR MINUTOS
-    */
-
     document
         .getElementById("minutes")
         .textContent =
             String(minutes)
             .padStart(2,"0");
 
-
-
-    /*
-    MOSTRAR SEGUNDOS
-    */
 
     document
         .getElementById("seconds")
@@ -2162,6 +2838,7 @@ setInterval(
     updateCountdown,
     1000
 );
+
 
 </script>
 
