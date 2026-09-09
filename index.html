@@ -12,7 +12,6 @@
 
 <title>Germán & Andrea | Nuestra Boda</title>
 
-
 <!-- =====================================================
      FUENTES
 ===================================================== -->
@@ -30,7 +29,6 @@
     rel="stylesheet"
 >
 
-
 <style>
 
 /* =====================================================
@@ -40,38 +38,31 @@
 :root {
 
     --verde-selva: #1e3325;
-
     --verde-bosque: #2f4638;
-
     --verde-oliva: #5c7053;
-
     --verde-salvia: #9cae93;
-
     --verde-claro: #dce4d6;
 
     --cafe-oscuro: #3f2f24;
-
     --cafe-madera: #6b513d;
-
     --cafe-claro: #a58b72;
 
     --arena: #e3d5c0;
-
     --marfil: #faf7f0;
-
     --crema: #f4efe6;
-
     --blanco: #ffffff;
 
     --texto: #4a3f35;
-
     --texto-suave: #75695e;
 
-    --sombra-suave: 0 10px 30px rgba(38, 61, 45, 0.08);
+    --sombra-suave:
+        0 10px 30px rgba(38, 61, 45, 0.08);
 
-    --sombra-media: 0 15px 45px rgba(38, 61, 45, 0.12);
+    --sombra-media:
+        0 15px 45px rgba(38, 61, 45, 0.12);
 
-    --sombra-hover: 0 22px 55px rgba(38, 61, 45, 0.18);
+    --sombra-hover:
+        0 22px 55px rgba(38, 61, 45, 0.18);
 
     --borde-orgánico: 8px;
 
@@ -83,20 +74,14 @@
 ===================================================== */
 
 * {
-
     margin: 0;
-
     padding: 0;
-
     box-sizing: border-box;
-
 }
 
 
 html {
-
     scroll-behavior: smooth;
-
 }
 
 
@@ -141,7 +126,7 @@ body {
 
 
 /* =====================================================
-   TEXTURA BOTÁNICA GENERAL (hojas sutiles)
+   TEXTURA BOTÁNICA GENERAL
 ===================================================== */
 
 body::before {
@@ -218,7 +203,6 @@ body::before {
     overflow: hidden;
 
     background-image:
-
         url('imagen.jpeg');
 
     background-size:
@@ -272,21 +256,15 @@ body::before {
 @keyframes heroAppear {
 
     from {
-
         opacity: 0;
-
         transform:
             translateY(30px);
-
     }
 
     to {
-
         opacity: 1;
-
         transform:
             translateY(0);
-
     }
 
 }
@@ -464,13 +442,13 @@ h1 {
         4%;
 
     font-size:
-        52px;
+        34px;
 
     transform:
         rotate(-18deg);
 
     opacity:
-        .85;
+        .58;
 
 }
 
@@ -486,7 +464,7 @@ h1 {
         5%;
 
     font-size:
-        42px;
+        29px;
 
     animation-delay:
         1.4s;
@@ -495,7 +473,7 @@ h1 {
         rotate(15deg);
 
     opacity:
-        .8;
+        .55;
 
 }
 
@@ -511,7 +489,7 @@ h1 {
         6%;
 
     font-size:
-        36px;
+        25px;
 
     animation-delay:
         2.8s;
@@ -520,7 +498,7 @@ h1 {
         rotate(-10deg);
 
     opacity:
-        .75;
+        .50;
 
 }
 
@@ -536,7 +514,7 @@ h1 {
         6%;
 
     font-size:
-        44px;
+        30px;
 
     animation-delay:
         4.2s;
@@ -545,7 +523,7 @@ h1 {
         rotate(22deg);
 
     opacity:
-        .8;
+        .55;
 
 }
 
@@ -561,7 +539,7 @@ h1 {
         50%;
 
     font-size:
-        28px;
+        19px;
 
     animation-delay:
         2s;
@@ -570,7 +548,7 @@ h1 {
         rotate(5deg);
 
     opacity:
-        .6;
+        .42;
 
 }
 
@@ -586,7 +564,7 @@ h1 {
         45%;
 
     font-size:
-        24px;
+        17px;
 
     animation-delay:
         3.5s;
@@ -595,7 +573,7 @@ h1 {
         rotate(-8deg);
 
     opacity:
-        .55;
+        .38;
 
 }
 
@@ -654,10 +632,13 @@ h1 {
         var(--borde-orgánico);
 
     box-shadow:
-        var(--sombra-media);
+        0 18px 50px rgba(38,61,45,.10);
 
     backdrop-filter:
-        blur(5px);
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
 
 }
 
@@ -900,17 +881,23 @@ h1 {
         28px 22px;
 
     background:
-        rgba(244,239,230,.9);
+        rgba(244,239,230,.82);
 
     border:
         1px solid
-        rgba(107,81,61,.18);
+        rgba(107,81,61,.14);
 
     border-radius:
         var(--borde-orgánico);
 
     box-shadow:
-        var(--sombra-suave);
+        0 18px 50px rgba(38,61,45,.10);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
 
 }
 
@@ -992,17 +979,23 @@ audio {
         60px 48px;
 
     background:
-        rgba(255, 255, 255, 0.96);
+        rgba(255,255,255,.94);
 
     border:
         1px solid
-        rgba(92,112,83,.22);
+        rgba(92,112,83,.16);
 
     border-radius:
         var(--borde-orgánico);
 
     box-shadow:
-        var(--sombra-media);
+        0 18px 50px rgba(38,61,45,.10);
+
+    backdrop-filter:
+        blur(10px);
+
+    -webkit-backdrop-filter:
+        blur(10px);
 
     overflow:
         hidden;
@@ -1068,7 +1061,7 @@ audio {
         -38px;
 
     font-size:
-        8rem;
+        5rem;
 
     color:
         rgba(47,70,56,.06);
@@ -1099,7 +1092,7 @@ audio {
         8px;
 
     font-size:
-        1.8rem;
+        1.25rem;
 
     color:
         rgba(92,112,83,.08);
@@ -1537,26 +1530,20 @@ audio {
 
 
 .verde {
-
     background:
         #65755b;
-
 }
 
 
 .negro {
-
     background:
         #2b2b28;
-
 }
 
 
 .blanco {
-
     background:
         #f7f5ef;
-
 }
 
 
@@ -1731,8 +1718,7 @@ audio {
         .4s ease;
 
     box-shadow:
-        0 8px 20px
-        rgba(47,70,56,.25);
+        0 10px 28px rgba(47,70,56,.22);
 
     border:
         1px solid
@@ -1750,8 +1736,7 @@ audio {
         translateY(-3px);
 
     box-shadow:
-        0 12px 28px
-        rgba(47,70,56,.35);
+        0 16px 34px rgba(47,70,56,.30);
 
 }
 
@@ -1918,13 +1903,13 @@ footer::before {
     .botanical-1 {
 
         left:
-        8px;
+            8px;
 
         top:
-        8%;
+            8%;
 
         font-size:
-        32px;
+            22px;
 
     }
 
@@ -1932,13 +1917,13 @@ footer::before {
     .botanical-2 {
 
         right:
-        8px;
+            8px;
 
         top:
-        12%;
+            12%;
 
         font-size:
-        28px;
+            20px;
 
     }
 
@@ -1946,13 +1931,13 @@ footer::before {
     .botanical-3 {
 
         left:
-        10px;
+            10px;
 
         bottom:
-        20%;
+            20%;
 
         font-size:
-        24px;
+            18px;
 
     }
 
@@ -1960,13 +1945,13 @@ footer::before {
     .botanical-4 {
 
         right:
-        10px;
+            10px;
 
         bottom:
-        16%;
+            16%;
 
         font-size:
-        30px;
+            21px;
 
     }
 
@@ -1974,13 +1959,13 @@ footer::before {
     .botanical-5 {
 
         top:
-        4%;
+            4%;
 
         left:
-        45%;
+            45%;
 
         font-size:
-        20px;
+            14px;
 
     }
 
@@ -1988,13 +1973,13 @@ footer::before {
     .botanical-6 {
 
         bottom:
-        6%;
+            6%;
 
         left:
-        42%;
+            42%;
 
         font-size:
-        18px;
+            13px;
 
     }
 
@@ -2069,6 +2054,22 @@ footer::before {
 
         padding:
             45px 22px;
+
+    }
+
+
+    .section::after {
+
+        font-size:
+            3.5rem;
+
+    }
+
+
+    .section .corner-leaf {
+
+        font-size:
+            1rem;
 
     }
 
